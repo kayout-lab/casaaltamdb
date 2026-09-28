@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CASA ALTA | Master Data</title>
+<title>CASAALTA | Master Data</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 <style>
@@ -112,7 +112,7 @@
 <body>
 <section id="login">
   <div class="login-card">
-    <div class="brandmark"><div class="logo">🏢</div><div><strong>CASA ALTA</strong><div class="eyebrow">MASTER DATA</div></div></div>
+    <div class="brandmark"><div class="logo">🏢</div><div><strong>CASAALTA</strong><div class="eyebrow">MASTER DATA</div></div></div>
     <h1>Acesso ao sistema</h1>
     <div class="sub">Gestão centralizada de empreendimentos, unidades, proprietários e vendas.</div>
     <form id="loginForm">
@@ -129,7 +129,7 @@
     <aside id="sidebar" class="sidebar">
       <div class="sidebar-brand">
         <div class="logo">▦</div>
-        <div class="brand-copy"><div class="title">CASA ALTA</div><small>Master Data</small></div>
+        <div class="brand-copy"><div class="title">CASAALTA</div><small>Master Data</small></div>
         <button class="sidebar-mini-toggle" title="Recolher menu" onclick="toggleSidebar()">‹</button>
       </div>
       <div id="contextCard" class="context-card hidden">
@@ -157,7 +157,7 @@
       <header class="topbar">
         <div class="top-left">
           <button id="sidebarToggle" class="top-icon-btn" onclick="toggleSidebar()" title="Mostrar/ocultar menu">☰</button>
-          <div class="breadcrumb"><span>CASA ALTA</span><span>›</span><strong id="crumb">Todos os empreendimentos</strong></div>
+          <div class="breadcrumb"><span>CASAALTA</span><span>›</span><strong id="crumb">Todos os empreendimentos</strong></div>
         </div>
         <div class="top-actions">
           <button class="ghost" onclick="refreshCurrent()">↻ Atualizar</button>
@@ -243,7 +243,7 @@ function activeEnterpriseIds(){
 }
 
 function enableContextNav(){document.querySelectorAll('#contextNav button').forEach(b=>b.disabled=!state.selected);$('contextCard').classList.toggle('hidden',!state.selected);$('contextName').textContent=state.selected?.nome||''}
-function setActiveNav(view){document.querySelectorAll('.nav button[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view));const labels={home:'Todos os empreendimentos','report-global':'Relatório executivo','new-emp':'Novo empreendimento',dashboard:state.selected?.nome||'Dashboard',units:'Unidades', 'report-context':'Relatórios'};$('crumb').textContent=labels[view]||'CASA ALTA'}
+function setActiveNav(view){document.querySelectorAll('.nav button[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view));const labels={home:'Todos os empreendimentos','report-global':'Relatório executivo','new-emp':'Novo empreendimento',dashboard:state.selected?.nome||'Dashboard',units:'Unidades', 'report-context':'Relatórios'};$('crumb').textContent=labels[view]||'CASAALTA'}
 function renderSelector(){state.selected=null;state.view='home';enableContextNav();setActiveNav('home');renderHome()}
 function goHome(){state.selected=null;state.unidades=[];state.vendas=[];state.owners=[];state.contextFilters={q:'',tipo:'',sfh:'',anoVenda:'',minValor:'',maxValor:''};enableContextNav();setActiveNav('home');state.view='home';persistWorkspace();renderHome()}
 async function selectEmp(id){
