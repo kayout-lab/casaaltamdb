@@ -191,22 +191,9 @@ const fmtPct=n=>`${Math.round(n||0)}%`;
 function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 function norm(s){return String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim()}
 
-// Fonte de verdade do portfólio atual: nomes oficiais presentes na Arquivo BaseV2(1).xlsx.
-// O banco continua sendo a fonte dos dados; esta lista serve somente como filtro de escopo
-// para impedir que registros legados/órfãos de versões anteriores apareçam no frontend.
-const OFFICIAL_ENTERPRISE_NAMES = [
-  'CASTELMONTE RESIDENCIAL',
-  'CONDOMÍNIO CARLOS DRUMOND DE ANDRADE',
-  'CONDOMÍNIO CECILIA MEIRELES',
-  'CONDOMÍNIO RESIDENCIAL ARBORETTO',
-  'NEW WAVE NAÇÕES 3 - Mod I',
-  'NEW WAVE NAÇÕES 3 - Mod II'
-];
-const OFFICIAL_ENTERPRISE_KEYS = new Set(OFFICIAL_ENTERPRISE_NAMES.map(norm));
-const isOfficialEnterprise = e => !!e && OFFICIAL_ENTERPRISE_KEYS.has(norm(e.nome));
-const officialDbEnterprises = raw => (Array.isArray(raw)?raw:[])
-  .filter(isOfficialEnterprise)
-  .sort((a,b)=>String(a.nome||'').localeCompare(String(b.nome||''),'pt-BR'));
+// Fonte de verdade do portfólio: o próprio Supabase.
+// Não existe lista fixa de empreendimentos no frontend. O banco define quais
+// empreendimentos existem, e seus IDs são usados nos relacionamentos.
 const hasUsefulValues = arr => Array.isArray(arr) && arr.length && arr.some(v => Number(v) > 0);
 function toast(msg,kind=''){const t=document.createElement('div');t.className='toast '+kind;t.textContent=msg;$('toastWrap').appendChild(t);setTimeout(()=>t.remove(),4200)}
 function loading(on,text='Carregando...'){$('loadingText').textContent=text;$('loading').classList.toggle('hidden',!on)}
@@ -244,22 +231,15 @@ function enterpriseMetricForHome(e){
   return {units:us.length,sales:vs.length,latest:String(e.updated_at||e.created_at||'')};
 }
 function applyPortfolioData(raw){
-  // O Supabase é a fonte dos registros; a lista oficial da planilha apenas limita o escopo.
-  const source=officialDbEnterprises(raw);
-  const byName=new Map();
-  for(const e of source){
-    const key=norm(e.nome||'');
-    const current=byName.get(key);
-    if(!current){byName.set(key,e);continue;}
-    const a=(state._allUnits?.[current.id]||[]).length,b=(state._allUnits?.[e.id]||[]).length;
-    const currentWhen=String(current.updated_at||current.created_at||'');
-    const nextWhen=String(e.updated_at||e.created_at||'');
-    if(b>a || (b===a && nextWhen>currentWhen)) byName.set(key,e);
-  }
-  state.empreendimentos=[...byName.values()].sort((a,b)=>String(a.nome||'').localeCompare(String(b.nome||''),'pt-BR'));
+  // O banco é a única fonte de verdade. Preservamos 1:1 os empreendimentos retornados.
+  const source=Array.isArray(raw)?raw:[];
+  state.empreendimentos=[...source].sort((a,b)=>String(a.nome||'').localeCompare(String(b.nome||''),'pt-BR'));
   if(state.selected && !state.empreendimentos.some(e=>String(e.id)===String(state.selected.id))){
     state.selected=null;state.unidades=[];state.vendas=[];state.owners=[];
   }
+}
+function activeEnterpriseIds(){
+  return new Set((state.empreendimentos||[]).map(e=>String(e.id)));
 }
 
 function enableContextNav(){document.querySelectorAll('#contextNav button').forEach(b=>b.disabled=!state.selected);$('contextCard').classList.toggle('hidden',!state.selected);$('contextName').textContent=state.selected?.nome||''}
@@ -268,7 +248,7 @@ function renderSelector(){state.selected=null;state.view='home';enableContextNav
 function goHome(){state.selected=null;state.unidades=[];state.vendas=[];state.owners=[];state.contextFilters={q:'',tipo:'',sfh:'',anoVenda:'',minValor:'',maxValor:''};enableContextNav();setActiveNav('home');state.view='home';persistWorkspace();renderHome()}
 async function selectEmp(id){
   const emp=state.empreendimentos.find(x=>String(x.id)===String(id));
-  if(!emp || !isOfficialEnterprise(emp))return;
+  if(!emp)return;
   loading(true,'Abrindo empreendimento…');
   state.selected=emp;
   state.contextFilters={q:'',tipo:'',sfh:'',anoVenda:'',minValor:'',maxValor:'',status:''};
@@ -453,7 +433,7 @@ async function renderHome(){
   clearCharts();
   state.view='home';
   setActiveNav('home');
-  const rows=portfolioRows().filter(({e})=>isOfficialEnterprise(e));
+  const rows=portfolioRows();
   const totalU=rows.reduce((s,x)=>s+x.m.u,0);
   const totalValue=rows.reduce((s,x)=>s+x.m.vgv,0);
   main().innerHTML=`
@@ -488,8 +468,8 @@ async function renderGlobalReport(){
   const sfhContracted=rows.filter(v=>norm(v.tipo_venda)==='sfh contratado').length;
   const sfhPending=rows.filter(v=>norm(v.tipo_venda)==='sfh por contratar').length;
   const typeCount=reportTypeRows(rows),byYear=reportValueByYear(rows),sfhYear=reportSfhByYear(rows);
-  const valueByEmp=state.empreendimentos.filter(isOfficialEnterprise).map(e=>({e,m:empMetrics(e.id)})).filter(x=>x.m.vgv>0||x.m.u>0).sort((a,b)=>b.m.vgv-a.m.vgv);
-  const empOptions=state.empreendimentos.filter(isOfficialEnterprise).map(e=>`<option value="${e.id}" ${String(gf.emp)===String(e.id)?'selected':''}>${esc(e.nome)}</option>`).join('');
+  const valueByEmp=state.empreendimentos.map(e=>({e,m:empMetrics(e.id)})).filter(x=>x.m.vgv>0||x.m.u>0).sort((a,b)=>b.m.vgv-a.m.vgv);
+  const empOptions=state.empreendimentos.map(e=>`<option value="${e.id}" ${String(gf.emp)===String(e.id)?'selected':''}>${esc(e.nome)}</option>`).join('');
   const typeOptions=types.map(t=>`<option value="${esc(t)}" ${norm(gf.tipo)===norm(t)?'selected':''}>${esc(t)}</option>`).join('');
   const saleYearOptions=saleYears.map(y=>`<option value="${y}" ${gf.anoVenda===y?'selected':''}>${y}</option>`).join('');
   const showValueEmp=hasUsefulValues(valueByEmp.map(x=>x.m.vgv));
