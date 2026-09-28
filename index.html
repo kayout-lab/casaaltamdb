@@ -50,6 +50,61 @@
 @media(max-width:820px){.sidebar{display:none}.app-shell{grid-template-columns:1fr}.content{padding:20px 16px}.topbar{padding:0 16px}.selector-grid{grid-template-columns:1fr}.formgrid,.detail-grid{grid-template-columns:1fr}.page-head{align-items:flex-start;flex-direction:column}.kpis,.report-kpis{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.topbar .breadcrumb{display:none}.user-pill span{display:none}.kpis,.report-kpis,.filterbar{grid-template-columns:1fr}.emp-stats{grid-template-columns:1fr 1fr}.page-head h1{font-size:25px}}
 @media print{.sidebar,.topbar,.actions,.filterbar,.selector-head{display:none!important}.content{padding:0}.surface{box-shadow:none}}
+
+/* V8 frontend - clean 2026 */
+:root{
+ --bg:#f4f6fa;--surface:#fff;--surface-2:#f8fafc;--line:#e2e8f0;--text:#172033;--muted:#6a7484;
+ --brand:#2b62e8;--brand-2:#1d4ed8;--brand-soft:#edf3ff;--success:#16845a;--success-soft:#eaf8f2;
+ --warning:#a76908;--warning-soft:#fff6df;--danger:#b93f3f;--danger-soft:#fdeeee;--nav:#0e1624;--nav2:#142238;
+ --shadow:0 8px 26px rgba(15,23,42,.05);--shadow-lg:0 24px 64px rgba(15,23,42,.14);--radius:20px;--radius-sm:14px;
+}
+.app-shell{grid-template-columns:252px 1fr;transition:grid-template-columns .22s ease}
+.sidebar{padding:14px 12px;box-shadow:12px 0 32px rgba(15,23,42,.04);z-index:30}
+.sidebar-brand{padding:4px 8px 18px}
+.sidebar-mini-toggle{margin-left:auto;width:32px;height:32px;border:0;border-radius:10px;background:rgba(255,255,255,.07);color:#c9d4e2;font-size:20px;line-height:1}
+.sidebar-mini-toggle:hover{background:rgba(255,255,255,.12);color:#fff}
+.context-card{padding:11px;border-radius:14px}
+.context-card strong{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.context-back{margin-top:8px;width:100%;display:flex;gap:8px;align-items:center;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.05);color:#cbd5e1;padding:8px 9px;border-radius:10px;font-size:11px;font-weight:750}
+.nav button{padding:10px 11px;border-radius:11px;font-size:13px}
+.nav button .icon{width:19px;flex:0 0 19px;display:grid;place-items:center}
+.topbar{height:64px;padding:0 26px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.84);backdrop-filter:blur(15px);position:sticky;top:0;z-index:20}
+.top-left{display:flex;align-items:center;gap:11px}
+.top-icon-btn{width:38px;height:38px;border:1px solid var(--line);background:#fff;border-radius:12px;display:grid;place-items:center;color:#405169;font-weight:800}
+.content{padding:28px 30px 40px;max-width:1680px;margin:0 auto}
+.page-head{margin-bottom:18px}.page-head h1{font-size:29px;letter-spacing:-.035em}.page-head p{font-size:13px;max-width:780px}
+.clean-title{margin-bottom:6px}.surface{border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow)}
+.section{padding:20px}.section-head h3{font-size:15px;letter-spacing:-.02em}
+.home-summary{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:-2px 0 18px}
+.home-summary .pill{padding:7px 10px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:11px;font-weight:800;color:#56657a}
+.home-summary .sep{color:#b8c1cd}.portfolio-grid.single{grid-template-columns:1fr}.portfolio-head{margin-bottom:14px}
+.emp-card{padding:17px;min-height:218px;border-radius:17px}.emp-card h3{font-size:15px;margin-top:13px}.emp-card .primary{height:38px;padding:8px 12px}
+.emp-stats{margin-top:12px}.mini-stat{padding:9px;border-radius:11px}.mini-stat strong{font-size:14px}
+.filters-card{padding:14px;margin-bottom:15px}.filters-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:11px}
+.filters-title strong{font-size:13px}.filter-grid{display:grid;grid-template-columns:2fr 1.15fr 1.15fr 1fr 1fr 1fr;gap:9px}
+.filter-control{min-width:0}.filter-control input,.filter-control select{width:100%;height:40px;padding:9px 11px;border:1px solid var(--line);border-radius:11px;background:#fbfcfe;outline:none;color:var(--text)}
+.filter-control input:focus,.filter-control select:focus{border-color:#aac4ff;box-shadow:0 0 0 4px rgba(43,98,232,.08);background:#fff}
+.filter-actions{display:flex;align-items:center;gap:8px;margin-top:9px}.filter-actions input{width:160px;height:38px;padding:9px 11px;border:1px solid var(--line);border-radius:11px}
+.report-grid{gap:14px}.report-chart-card{min-height:355px}.chart-box{height:282px}.chart-box.tall{height:350px}.chart-box.compact{height:235px}
+.finance-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}.finance-card{padding:15px 16px;border-radius:16px}
+.finance-card strong{font-size:21px;letter-spacing:-.03em}.finance-card span{font-size:11px;color:var(--muted)}
+.executive-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px}
+.data-table tbody tr.unit-row{cursor:pointer}.data-table tbody tr.unit-row:hover td{background:#f7faff}.data-table tbody tr.unit-row:focus-visible td{outline:2px solid #9bbcff;outline-offset:-2px}
+.table-link{font-weight:850;color:#1f4fc3}.table-note{font-size:11px;color:var(--muted);margin-top:7px}
+.empty-state{padding:46px 24px;text-align:center;color:var(--muted)}.empty-state strong{display:block;color:var(--text);font-size:16px;margin-bottom:6px}
+.nav-collapsed .app-shell{grid-template-columns:78px 1fr}.nav-collapsed .sidebar-brand .brand-copy,.nav-collapsed .sidebar-mini-toggle{display:none}
+.nav-collapsed .menu-label,.nav-collapsed .context-card .small,.nav-collapsed .context-card strong,.nav-collapsed .context-back .nav-text,.nav-collapsed .nav-text{display:none}
+.nav-collapsed .sidebar-brand{justify-content:center}.nav-collapsed .context-card{display:flex;justify-content:center}.nav-collapsed .context-back{justify-content:center}.nav-collapsed .nav button{justify-content:center}
+.mobile-backdrop{position:fixed;inset:0;background:rgba(15,23,42,.35);z-index:25}
+@media(max-width:1180px){.content{padding:22px 20px 34px}.filter-grid{grid-template-columns:1fr 1fr 1fr}.filter-control:first-child{grid-column:1/-1}.report-grid.three{grid-template-columns:1fr 1fr}}
+@media(max-width:820px){
+ .app-shell{grid-template-columns:1fr}.sidebar{display:block;position:fixed;left:0;top:0;bottom:0;width:270px;transform:translateX(-102%);transition:transform .22s ease;z-index:40}
+ .sidebar.open{transform:translateX(0)}.nav-collapsed .app-shell{grid-template-columns:1fr}.topbar{padding:0 15px}.content{padding:19px 14px 28px}
+ .filter-grid{grid-template-columns:1fr 1fr}.filter-control:first-child{grid-column:1/-1}.finance-strip,.report-grid,.report-grid.three{grid-template-columns:1fr}.selector-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){.filter-grid{grid-template-columns:1fr}.filter-control:first-child{grid-column:auto}.topbar .breadcrumb{display:none}.top-actions .ghost{display:none}.home-summary{margin-bottom:14px}}
+@media print{.sidebar,.topbar,.filters-card,.actions{display:none!important}.content{padding:0;max-width:none}.surface{box-shadow:none}}
+
 </style>
 </head>
 <body>
@@ -69,34 +124,49 @@
 
 <div id="app" class="hidden">
   <div class="app-shell">
-    <aside class="sidebar">
-      <div class="sidebar-brand"><div class="logo">🏢</div><div><div class="title">CASA ALTA</div><small>Master Data • 2026</small></div></div>
-      <div id="contextCard" class="context-card hidden"><div class="small">Contexto ativo</div><strong id="contextName"></strong><button onclick="goHome()">Voltar ao portfólio</button></div>
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-brand">
+        <div class="logo">▦</div>
+        <div class="brand-copy"><div class="title">CASA ALTA</div><small>Master Data</small></div>
+        <button class="sidebar-mini-toggle" title="Recolher menu" onclick="toggleSidebar()">‹</button>
+      </div>
+      <div id="contextCard" class="context-card hidden">
+        <div class="small">Empreendimento ativo</div>
+        <strong id="contextName"></strong>
+        <button class="context-back" onclick="goHome()"><span class="icon">⌂</span><span class="nav-text">Todos os empreendimentos</span></button>
+      </div>
       <div class="menu-label">Portfólio</div>
       <nav class="nav">
-        <button data-view="home" title="Todos os empreendimentos"><span class="icon">🏠</span>Todos os empreendimentos</button>
-        <button data-view="report-global" title="Relatório executivo"><span class="icon">📊</span>Relatório executivo</button>
-        <button data-view="new-emp" title="Cadastrar empreendimento"><span class="icon">＋</span>Novo empreendimento</button>
+        <button data-view="home" title="Todos os empreendimentos"><span class="icon">⌂</span><span class="nav-text">Todos os empreendimentos</span></button>
+        <button data-view="report-global" title="Relatório executivo"><span class="icon">◫</span><span class="nav-text">Relatório executivo</span></button>
+        <button data-view="new-emp" title="Cadastrar empreendimento"><span class="icon">＋</span><span class="nav-text">Novo empreendimento</span></button>
       </nav>
       <div class="nav-sep"></div>
       <div class="menu-label">Empreendimento selecionado</div>
       <nav class="nav" id="contextNav">
-        <button data-view="dashboard" disabled title="Selecione um empreendimento"><span class="icon">◈</span>Dashboard</button>
-        <button data-view="units" disabled title="Selecione um empreendimento"><span class="icon">▦</span>Unidades</button>
-        <button data-view="report-context" disabled title="Selecione um empreendimento"><span class="icon">◒</span>Relatórios</button>
+        <button data-view="dashboard" disabled title="Selecione um empreendimento"><span class="icon">◈</span><span class="nav-text">Dashboard</span></button>
+        <button data-view="units" disabled title="Selecione um empreendimento"><span class="icon">▦</span><span class="nav-text">Unidades</span></button>
+        <button data-view="report-context" disabled title="Selecione um empreendimento"><span class="icon">◫</span><span class="nav-text">Relatórios</span></button>
       </nav>
       <div class="nav-sep"></div>
-      <nav class="nav"><button id="signOut"><span class="icon">↪</span>Sair</button></nav>
+      <nav class="nav"><button id="signOut" title="Sair"><span class="icon">↪</span><span class="nav-text">Sair</span></button></nav>
     </aside>
-    <div>
+    <div class="workspace">
       <header class="topbar">
-        <div class="breadcrumb"><span>CASA ALTA</span><span>›</span><strong id="crumb">Todos os empreendimentos</strong></div>
-        <div class="top-actions"><button class="ghost" onclick="refreshCurrent()">↻ Atualizar</button><div class="user-pill"><div class="user-avatar" id="avatar">CA</div><span id="userEmail"></span></div></div>
+        <div class="top-left">
+          <button id="sidebarToggle" class="top-icon-btn" onclick="toggleSidebar()" title="Mostrar/ocultar menu">☰</button>
+          <div class="breadcrumb"><span>CASA ALTA</span><span>›</span><strong id="crumb">Todos os empreendimentos</strong></div>
+        </div>
+        <div class="top-actions">
+          <button class="ghost" onclick="refreshCurrent()">↻ Atualizar</button>
+          <div class="user-pill"><div class="user-avatar" id="avatar">CA</div><span id="userEmail"></span></div>
+        </div>
       </header>
       <main class="content" id="main"></main>
     </div>
   </div>
 </div>
+<div id="mobileBackdrop" class="mobile-backdrop hidden" onclick="toggleSidebar(false)"></div>
 <div id="modal" class="modal hidden"></div>
 <div id="toastWrap" class="toast-wrap"></div>
 <div id="loading" class="loading hidden"><div class="loading-card"><div class="spinner"></div><span id="loadingText">Carregando...</span></div></div>
@@ -105,38 +175,47 @@
 <script>
 'use strict';
 let sb=null;
-const state={user:null,empreendimentos:[],_rawEmpreendimentos:[],selected:null,unidades:[],vendas:[],owners:[],view:'home',charts:{},globalFilters:{q:'',emp:'',tipo:'',ano:'',anoVenda:'',complete:'',status:'',minValor:'',maxValor:''},contextFilters:{q:'',tipo:'',sfh:'',status:'',anoVenda:'',minValor:'',maxValor:''},allLoaded:false,_allUnits:{},_allVendas:{},_allOwners:{},_restored:false};
+const state={user:null,empreendimentos:[],_rawEmpreendimentos:[],selected:null,unidades:[],vendas:[],owners:[],view:'home',charts:{},globalFilters:{q:'',emp:'',tipo:'',anoVenda:'',sfh:'',minValor:'',maxValor:''},contextFilters:{q:'',tipo:'',sfh:'',anoVenda:'',minValor:'',maxValor:''},allLoaded:false,_allUnits:{},_allVendas:{},_allOwners:{},_restored:false};
 const $=id=>document.getElementById(id);
 const moneyFmt=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:2});
 const money0=n=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}).format(Number(n)||0);
 const numValue=v=>v===null||v===undefined||v===''?null:Number(v)||0;
 const sumField=(rows,k)=>rows.reduce((s,v)=>s+(numValue(v[k])??0),0);
 const hasField=(v,k)=>v[k]!==null&&v[k]!==undefined&&v[k]!=='';
-const financeSummary=rows=>{const sale=sumField(rows,'valor_venda'),rp=sumField(rows,'recursos_proprios'),fin=sumField(rows,'financiamento'),fgts=sumField(rows,'fgts'),sub=sumField(rows,'subsidio');const compRows=rows.filter(v=>['recursos_proprios','financiamento','fgts','subsidio'].some(k=>hasField(v,k))).length;const compTotal=rp+fin+fgts+sub;return {sale,rp,fin,fgts,sub,avg:rows.length?sale/rows.length:0,compRows,coverage:rows.length?compRows/rows.length*100:0,compTotal};};
+const financeSummary=rows=>{const valued=rows.filter(v=>Number.isFinite(Number(v.valor_venda)));const sale=sumField(valued,'valor_venda'),rp=sumField(valued,'recursos_proprios'),fin=sumField(valued,'financiamento'),fgts=sumField(valued,'fgts'),sub=sumField(valued,'subsidio');return {sale,rp,fin,fgts,sub,avg:valued.length?sale/valued.length:0,valuedCount:valued.length};};
 const main=()=>$('main');
 const fmtDate=d=>d?new Date(d+'T00:00:00').toLocaleDateString('pt-BR'):'—';
 const fmtPct=n=>`${Math.round(n||0)}%`;
 function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 function norm(s){return String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim()}
-function icon(type){return ({building:'🏢',unit:'▦',sale:'◫',sfh:'◒',report:'📊',home:'⌂',money:'◉',doc:'▤'}[type]||'•')}
 function toast(msg,kind=''){const t=document.createElement('div');t.className='toast '+kind;t.textContent=msg;$('toastWrap').appendChild(t);setTimeout(()=>t.remove(),4200)}
 function loading(on,text='Carregando...'){$('loadingText').textContent=text;$('loading').classList.toggle('hidden',!on)}
 function showLoginError(msg){$('loginError').textContent=msg;$('loginError').classList.remove('hidden')}
 function setLoginVisible(on){$('login').classList.toggle('hidden',!on);$('app').classList.toggle('hidden',on)}
 function setupSupabase(){try{const cfg=window.APP_CONFIG||{};if(!cfg.SUPABASE_URL||!cfg.SUPABASE_ANON_KEY||cfg.SUPABASE_URL.includes('SEU-PROJETO')||cfg.SUPABASE_ANON_KEY.includes('SUA_CHAVE')){showLoginError('Configure o arquivo config.js com a URL e a chave publicável do Supabase.');return false}if(!window.supabase?.createClient){showLoginError('A biblioteca do Supabase não carregou. Recarregue a página e verifique a conexão.');return false}sb=window.supabase.createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY);return true}catch(e){console.error(e);showLoginError('Não foi possível inicializar o Supabase.');return false}}
 const workspaceKey=()=>state.user?.id?`casaalta:workspace:${state.user.id}`:'casaalta:workspace:anon';
-function persistWorkspace(){try{if(!state.user)return;localStorage.setItem(workspaceKey(),JSON.stringify({view:state.view,selectedId:state.selected?.id||null,ts:Date.now()}))}catch(e){console.warn('Não foi possível persistir o estado da interface.',e)}}
-function clearWorkspacePersistence(){try{if(state.user)localStorage.removeItem(workspaceKey())}catch(e){}}
-async function restoreWorkspace(){if(state._restored)return;state._restored=true;try{const raw=localStorage.getItem(workspaceKey());if(!raw){await renderHome();return}const saved=JSON.parse(raw)||{};const savedEmp=saved.selectedId?state.empreendimentos.find(e=>String(e.id)===String(saved.selectedId)):null;if(savedEmp){loading(true,'Restaurando seu último contexto…');try{state.selected=savedEmp;await loadContext();enableContextNav();state.view=['dashboard','units','report-context'].includes(saved.view)?saved.view:'dashboard';setActiveNav(state.view);if(state.view==='dashboard')renderDashboard();else if(state.view==='units')renderUnits();else renderContextReport()}finally{loading(false)}}else if(saved.view==='report-global'){await renderGlobalReport()}else{state.selected=null;enableContextNav();await renderHome()}}catch(e){console.warn('Falha ao restaurar o estado da interface.',e);state.selected=null;state.view='home';await renderHome()}}
-async function init(){if(!setupSupabase())return;try{const {data,error}=await sb.auth.getSession();if(error)throw error;if(data.session)await onSignedIn(data.session.user,true);sb.auth.onAuthStateChange(async(event,s)=>{if(event==='SIGNED_IN'&&s?.user){await onSignedIn(s.user,true)}else if(event==='SIGNED_OUT'){clearWorkspacePersistence();state.user=null;state.selected=null;state.unidades=[];state.vendas=[];state.owners=[];state._restored=false;setLoginVisible(true)}})}catch(e){console.error(e);showLoginError('Falha de conexão com o Supabase: '+(e.message||e))}}
+function persistWorkspace(){try{if(!state.user)return;sessionStorage.setItem(workspaceKey(),JSON.stringify({view:state.view,selectedId:state.selected?.id||null,ts:Date.now()}))}catch(e){console.warn('Não foi possível persistir o estado da interface.',e)}}
+function clearWorkspacePersistence(){try{if(state.user)sessionStorage.removeItem(workspaceKey())}catch(e){}}
+async function restoreWorkspace(){if(state._restored)return;state._restored=true;try{const raw=sessionStorage.getItem(workspaceKey());if(!raw){await renderHome();return}const saved=JSON.parse(raw)||{};const savedEmp=saved.selectedId?state.empreendimentos.find(e=>String(e.id)===String(saved.selectedId)):null;if(savedEmp){loading(true,'Restaurando seu último contexto…');try{state.selected=savedEmp;await loadContext();enableContextNav();state.view=['dashboard','units','report-context'].includes(saved.view)?saved.view:'dashboard';setActiveNav(state.view);if(state.view==='dashboard')renderDashboard();else if(state.view==='units')renderUnits();else renderContextReport()}finally{loading(false)}}else if(saved.view==='report-global'){await renderGlobalReport()}else{state.selected=null;enableContextNav();await renderHome()}}catch(e){console.warn('Falha ao restaurar o estado da interface.',e);state.selected=null;state.view='home';await renderHome()}}
+async function init(){if(!setupSupabase())return;try{const {data,error}=await sb.auth.getSession();if(error)throw error;if(data.session)await onSignedIn(data.session.user,true);else setLoginVisible(true);sb.auth.onAuthStateChange(async(event,s)=>{if(event==='SIGNED_IN'&&s?.user){await onSignedIn(s.user,true)}else if(event==='SIGNED_OUT'){clearWorkspacePersistence();state.user=null;state.selected=null;state.unidades=[];state.vendas=[];state.owners=[];state._restored=false;setLoginVisible(true)}})}catch(e){console.error(e);showLoginError('Falha de conexão com o Supabase: '+(e.message||e))}}
 async function onSignedIn(user,restore=true){if(state.user?.id===user.id&&state._restored)return;state.user=user;setLoginVisible(false);$('userEmail').textContent=user.email||'';$('avatar').textContent=(user.email||'CA').slice(0,2).toUpperCase();state._restored=false;await loadEmpreendimentos();if(restore)await restoreWorkspace();else await renderHome()}
 $('loginForm').addEventListener('submit',async e=>{e.preventDefault();$('loginError').classList.add('hidden');const b=$('loginBtn');b.disabled=true;b.textContent='Entrando…';try{const {error}=await sb.auth.signInWithPassword({email:$('loginEmail').value.trim(),password:$('loginPassword').value});if(error)throw error}catch(err){console.error(err);showLoginError(err.message||'Não foi possível entrar.')}finally{b.disabled=false;b.textContent='Entrar'}});
 $('signOut').onclick=async()=>{await sb.auth.signOut()};
-async function loadEmpreendimentos(){
-  const {data,error}=await sb.from('empreendimentos').select('*').order('nome');
-  if(error){toast(error.message,'err');return}
-  state._rawEmpreendimentos=data||[];
-  applyPortfolioData(state._rawEmpreendimentos);
+async function loadEmpreendimentos(){const {data,error}=await sb.from('empreendimentos').select('*').order('nome');if(error){toast(error.message,'err');return}state._rawEmpreendimentos=data||[];applyPortfolioData(state._rawEmpreendimentos)}
+function icon(type){
+  const paths={
+    building:'<path d="M4 20V4.8A1.8 1.8 0 0 1 5.8 3H14v17"/><path d="M14 8h4.2A1.8 1.8 0 0 1 20 9.8V20"/><path d="M7.5 6.5h3M7.5 10h3M7.5 13.5h3M16.5 11h1M16.5 14.5h1M3 20h18"/><path d="M10 20v-3h3v3"/>',
+    unit:'<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h2M14 8h2M8 12h2M14 12h2M8 16h2M14 16h2"/>',
+    sale:'<path d="M4 6h16v12H4z"/><path d="M7 9h10M7 12h7M7 15h5"/>',
+    report:'<path d="M4 19V5M4 19h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/>',
+    dashboard:'<rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/>',
+    home:'<path d="m4 10 8-6 8 6"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5h4v5"/>',
+    money:'<circle cx="12" cy="12" r="8"/><path d="M12 8v8M15 10c-.6-1-1.5-1.5-3-1.5-1.7 0-3 .9-3 2s1.2 2 3 2 3 .9 3 2-1.3 2-3 2c-1.5 0-2.5-.5-3-1.5"/>',
+    sfh:'<path d="M6 3v18M18 3v18M6 8h12M6 16h12"/><path d="M9 5v3M15 13v3"/>',
+    logout:'<path d="M10 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5"/><path d="M13 8l4 4-4 4M17 12H8"/>'
+  };
+  const body=paths[type]||paths.report;
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${body}</svg>`;
 }
 
 function enterpriseMetricForHome(e){
@@ -147,49 +226,25 @@ function enterpriseMetricForHome(e){
 function applyPortfolioData(raw){
   const source=Array.isArray(raw)?raw:[];
   const byName=new Map();
-  // Deduplica nomes exatamente iguais. Para escolher o registro vigente,
-  // prioriza maior quantidade de unidades, depois maior quantidade de vendas,
-  // e por fim o registro mais recente.
   for(const e of source){
     const key=norm(e.nome||'');
     if(!key) continue;
     const current=byName.get(key);
     if(!current){byName.set(key,e);continue;}
-    const a=enterpriseMetricForHome(current), b=enterpriseMetricForHome(e);
-    const aScore=[a.units,a.sales,a.latest], bScore=[b.units,b.sales,b.latest];
-    const better=(bScore[0]>aScore[0])||(bScore[0]===aScore[0]&&bScore[1]>aScore[1])||(bScore[0]===aScore[0]&&bScore[1]===aScore[1]&&bScore[2]>aScore[2]);
-    if(better) byName.set(key,e);
+    const a=(state._allUnits?.[current.id]||[]).length,b=(state._allUnits?.[e.id]||[]).length;
+    const currentWhen=String(current.updated_at||current.created_at||''),nextWhen=String(e.updated_at||e.created_at||'');
+    if(b>a || (b===a && nextWhen>currentWhen)) byName.set(key,e);
   }
-  let list=[...byName.values()];
-  const names=new Set(list.map(e=>norm(e.nome)));
-  const has=n=>names.has(norm(n));
-
-  // Remove aliases/legados conhecidos somente quando o cadastro atual equivalente existir.
-  // Isso mantém a home alimentada pelo Supabase, sem cards hard-coded.
-  const legacyHidden=(name)=>{
-    const n=norm(name);
-    if(n==='new wave nacoes iii' && (has('NEW WAVE NAÇÕES 3 - Mod I')||has('NEW WAVE NAÇÕES 3 - Mod II'))) return true;
-    if(n==='carlos drumond de andrade' && has('CONDOMÍNIO CARLOS DRUMOND DE ANDRADE')) return true;
-    if(n==='cecilia meireles' && has('CONDOMÍNIO CECILIA MEIRELES')) return true;
-    return false;
-  };
-  list=list.filter(e=>!legacyHidden(e.nome));
-  list.sort((a,b)=>String(a.nome||'').localeCompare(String(b.nome||''),'pt-BR'));
-  state.empreendimentos=list;
-
-  // Se o empreendimento selecionado deixou de ser válido (por exemplo, registro legado),
-  // limpa o contexto para impedir que dados antigos continuem na tela.
-  if(state.selected && !list.some(e=>String(e.id)===String(state.selected.id))){
-    state.selected=null;
-    state.unidades=[];state.vendas=[];state.owners=[];
-    enableContextNav();
+  state.empreendimentos=[...byName.values()].sort((a,b)=>String(a.nome||'').localeCompare(String(b.nome||''),'pt-BR'));
+  if(state.selected && !state.empreendimentos.some(e=>String(e.id)===String(state.selected.id))){
+    state.selected=null;state.unidades=[];state.vendas=[];state.owners=[];
   }
 }
 function enableContextNav(){document.querySelectorAll('#contextNav button').forEach(b=>b.disabled=!state.selected);$('contextCard').classList.toggle('hidden',!state.selected);$('contextName').textContent=state.selected?.nome||''}
 function setActiveNav(view){document.querySelectorAll('.nav button[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view));const labels={home:'Todos os empreendimentos','report-global':'Relatório executivo','new-emp':'Novo empreendimento',dashboard:state.selected?.nome||'Dashboard',units:'Unidades', 'report-context':'Relatórios'};$('crumb').textContent=labels[view]||'CASA ALTA'}
 function renderSelector(){state.selected=null;state.view='home';enableContextNav();setActiveNav('home');renderHome()}
-function goHome(){state.selected=null;state.unidades=[];state.vendas=[];state.owners=[];state.contextFilters={q:'',tipo:'',sfh:'',status:'',anoVenda:'',minValor:'',maxValor:''};enableContextNav();setActiveNav('home');state.view='home';persistWorkspace();renderHome()}
-async function selectEmp(id){const emp=state.empreendimentos.find(x=>x.id===id);if(!emp)return;loading(true,'Abrindo empreendimento…');state.selected=emp;state.contextFilters={q:'',tipo:'',sfh:'',status:'',anoVenda:'',minValor:'',maxValor:''};try{await loadContext();enableContextNav();setActiveNav('dashboard');state.view='dashboard';persistWorkspace();renderDashboard()}catch(err){enableContextNav();setActiveNav('home');state.view='home';persistWorkspace();renderHome()}finally{loading(false)}}
+function goHome(){state.selected=null;state.unidades=[];state.vendas=[];state.owners=[];state.contextFilters={q:'',tipo:'',sfh:'',anoVenda:'',minValor:'',maxValor:''};enableContextNav();setActiveNav('home');state.view='home';persistWorkspace();renderHome()}
+async function selectEmp(id){const emp=state.empreendimentos.find(x=>x.id===id);if(!emp)return;loading(true,'Abrindo empreendimento…');state.selected=emp;state.contextFilters={q:'',tipo:'',sfh:'',anoVenda:'',minValor:'',maxValor:''};try{await loadContext();enableContextNav();setActiveNav('dashboard');state.view='dashboard';persistWorkspace();renderDashboard()}catch(err){enableContextNav();setActiveNav('home');state.view='home';persistWorkspace();renderHome()}finally{loading(false)}}
 async function fetchAllRows(table, buildQuery){
   const pageSize=500;
   let from=0;
@@ -217,6 +272,70 @@ function normalizeUnit(u){
     status:String(u.status ?? u.status_unidade ?? 'Cadastrada').trim() || 'Cadastrada'
   };
 }
+function dedupeUnits(rows){
+  const map=new Map();
+  for(const u of rows||[]){
+    const key=`${norm(u.empreendimento_id)}|${norm(u.bloco)}|${norm(u.codigo)}`;
+    const old=map.get(key);
+    if(!old || String(u.updated_at||u.created_at||'')>String(old.updated_at||old.created_at||'')) map.set(key,u);
+  }
+  return [...map.values()].sort((a,b)=>String(a.bloco||'').localeCompare(String(b.bloco||''),'pt-BR',{numeric:true})||String(a.codigo||'').localeCompare(String(b.codigo||''),'pt-BR',{numeric:true}));
+}
+function empSales(id){
+  const unitIds=new Set((state._allUnits[id]||[]).map(u=>String(u.id)));
+  return (state._allVendas[id]||[]).filter(v=>unitIds.has(String(v.unidade_id)));
+}
+function empMetrics(id){
+  const us=state._allUnits[id]||[],vs=empSales(id),fin=financeSummary(vs);
+  return {u:us.length,v:vs.length,sfh:vs.filter(v=>norm(v.tipo_venda)==='sfh contratado').length,sfhPending:vs.filter(v=>norm(v.tipo_venda)==='sfh por contratar').length,vgv:fin.sale,avg:fin.avg,valuedCount:fin.valuedCount};
+}
+function currentPortfolioSales(){
+  const ids=activeEnterpriseIds(),rows=[];
+  for(const [empId,arr] of Object.entries(state._allVendas||{})){
+    if(!ids.has(String(empId))) continue;
+    const unitIds=new Set((state._allUnits[empId]||[]).map(u=>String(u.id)));
+    for(const v of (arr||[])) if(v?.id && unitIds.has(String(v.unidade_id))) rows.push({...v,empId:String(empId)});
+  }
+  return rows;
+}
+function entityLookup(row){
+  const e=state.empreendimentos.find(x=>String(x.id)===String(row.empId));
+  const u=(state._allUnits[row.empId]||[]).find(x=>String(x.id)===String(row.unidade_id));
+  const p=state._allOwners[row.proprietario_id];
+  return {e,u,p};
+}
+function filteredGlobal(){
+  const all=currentPortfolioSales(),f=state.globalFilters||{};
+  let rows=all;
+  if(f.emp) rows=rows.filter(v=>String(v.empId)===String(f.emp));
+  if(f.tipo) rows=rows.filter(v=>norm(v.tipo_venda)===norm(f.tipo));
+  if(f.anoVenda) rows=rows.filter(v=>String(v.data_venda||'').startsWith(f.anoVenda));
+  if(f.sfh==='com') rows=rows.filter(v=>!!v.data_sfh);
+  if(f.sfh==='sem') rows=rows.filter(v=>!v.data_sfh);
+  if(f.minValor!=='') rows=rows.filter(v=>Number.isFinite(Number(v.valor_venda)) && Number(v.valor_venda)>=Number(f.minValor));
+  if(f.maxValor!=='') rows=rows.filter(v=>Number.isFinite(Number(v.valor_venda)) && Number(v.valor_venda)<=Number(f.maxValor));
+  if(f.q){
+    const q=norm(f.q);rows=rows.filter(v=>{const {e,u,p}=entityLookup(v);return norm(`${e?.nome||''} ${u?.codigo||''} ${u?.bloco||''} ${p?.nome||''}`).includes(q)});
+  }
+  return rows;
+}
+function reportTypeRows(rows){
+  const map={};rows.forEach(v=>{const k=v.tipo_venda||'Não informado';map[k]=(map[k]||0)+1});
+  return Object.entries(map).sort((a,b)=>b[1]-a[1]);
+}
+function reportValueByType(rows){
+  const map={};rows.forEach(v=>{const k=v.tipo_venda||'Não informado';map[k]=(map[k]||0)+(Number(v.valor_venda)||0)});
+  return Object.entries(map).sort((a,b)=>b[1]-a[1]);
+}
+function reportValueByYear(rows){
+  const map={};rows.forEach(v=>{if(!v.data_venda)return;const y=String(v.data_venda).slice(0,4);map[y]=(map[y]||0)+(Number(v.valor_venda)||0)});
+  return Object.entries(map).sort((a,b)=>a[0].localeCompare(b[0]));
+}
+function reportSfhByYear(rows){
+  const map={};rows.forEach(v=>{if(!v.data_sfh)return;const y=String(v.data_sfh).slice(0,4);map[y]=(map[y]||0)+1});
+  return Object.entries(map).sort((a,b)=>a[0].localeCompare(b[0]));
+}
+
 async function loadContext(){
   const e=state.selected;
   state.unidades=[];state.vendas=[];state.owners=[];
@@ -254,7 +373,7 @@ async function loadContext(){
 }
 async function v4LoadAllData(){
   if(state.allLoaded)return;
-  loading(true,'Consolidando portfólio…');
+  loading(true,'Consolidando base atual…');
   try{
     const [u,v,p]=await Promise.all([
       fetchAllRows('unidades',q=>q.order('created_at',{ascending:true})),
@@ -263,31 +382,117 @@ async function v4LoadAllData(){
     ]);
     state._allUnits={};state._allVendas={};
     (u||[]).forEach(x=>(state._allUnits[x.empreendimento_id]??=[]).push(x));
+    Object.keys(state._allUnits).forEach(k=>state._allUnits[k]=dedupeUnits(state._allUnits[k]));
     (v||[]).forEach(x=>(state._allVendas[x.empreendimento_id]??=[]).push(x));
-    state._allOwners={};
-    (p||[]).forEach(x=>state._allOwners[x.id]=x);
-    state.allLoaded=true;
-    applyPortfolioData(state._rawEmpreendimentos);
+    state._allOwners={};(p||[]).forEach(x=>state._allOwners[x.id]=x);
+    state.allLoaded=true;applyPortfolioData(state._rawEmpreendimentos);
   }finally{loading(false)}
 }
-function empMetrics(id){const us=state._allUnits[id]||[], vs=state._allVendas[id]||[];const sfh=vs.filter(v=>!!v.data_sfh).length;const complete=vs.length?Math.round(vs.filter(v=>v.data_sfh).length/vs.length*100):0;return {u:us.length,v:vs.length,sfh,pend:vs.filter(v=>!v.data_sfh).length,complete}}
-function refreshCurrent(){if(state.view==='home')loadEmpreendimentos().then(renderHome);else if(state.view==='report-global')renderGlobalReport();else if(state.view==='dashboard'&&state.selected)selectEmp(state.selected.id);else if(state.view==='units'&&state.selected)reloadUnitsOnly();else if(state.view==='report-context'&&state.selected)selectEmp(state.selected.id);else if(state.view==='new-emp')openEmpModal()}
-async function reloadUnitsOnly(){if(!state.selected)return;loading(true,'Atualizando unidades…');try{state.unidades=(await fetchAllRows('unidades',q=>q.eq('empreendimento_id',state.selected.id).order('bloco',{ascending:true}).order('codigo',{ascending:true}))).map(normalizeUnit);try{state.vendas=await fetchAllRows('vendas',q=>q.eq('empreendimento_id',state.selected.id).order('created_at',{ascending:true}));}catch(e){state.vendas=[];toast(`Unidades carregadas; erro nas vendas: ${e?.message||e}`,'err')}try{state.owners=await fetchAllRows('proprietarios',q=>q.order('nome',{ascending:true}));}catch(e){state.owners=[];toast(`Unidades carregadas; erro nos proprietários: ${e?.message||e}`,'err')}renderUnits();toast(`${state.unidades.length} unidade(s) carregada(s).`,'ok')}catch(err){toast(`Erro ao atualizar unidades: ${err?.message||err}`,'err')}finally{loading(false)}}
+function refreshCurrent(){if(state.view==='home'){state.allLoaded=false;state._allUnits=null;state._allSales=null;state._allOwners=null;loadEmpreendimentos().then(renderHome)}else if(state.view==='report-global')renderGlobalReport();else if(state.view==='dashboard'&&state.selected)selectEmp(state.selected.id);else if(state.view==='units'&&state.selected)reloadUnitsOnly();else if(state.view==='report-context'&&state.selected)selectEmp(state.selected.id);else if(state.view==='new-emp')openEmpModal()}
+async function reloadUnitsOnly(){if(!state.selected)return;loading(true,'Atualizando unidades…');try{state.unidades=dedupeUnits((await fetchAllRows('unidades',q=>q.eq('empreendimento_id',state.selected.id).order('bloco',{ascending:true}).order('codigo',{ascending:true}))).map(normalizeUnit));try{state.vendas=await fetchAllRows('vendas',q=>q.eq('empreendimento_id',state.selected.id).order('created_at',{ascending:true}));}catch(e){state.vendas=[];toast(`Unidades carregadas; erro nas vendas: ${e?.message||e}`,'err')}try{state.owners=await fetchAllRows('proprietarios',q=>q.order('nome',{ascending:true}));}catch(e){state.owners=[];toast(`Unidades carregadas; erro nos proprietários: ${e?.message||e}`,'err')}renderUnits();toast(`${state.unidades.length} unidade(s) carregada(s).`,'ok')}catch(err){toast(`Erro ao atualizar unidades: ${err?.message||err}`,'err')}finally{loading(false)}}
 function clearCharts(){Object.values(state.charts).forEach(c=>{try{c.destroy()}catch{}});state.charts={}}
 function chart(id,type,labels,data,label,opts={}){const ctx=$(id);if(!ctx||!window.Chart)return;const safeLabels=Array.isArray(labels)?labels:[],safeData=(Array.isArray(data)?data:[]).map(v=>Number(v)||0);state.charts[id]=new Chart(ctx,{type,data:{labels:safeLabels,datasets:[{label,data:safeData,borderWidth:0,borderRadius:7,backgroundColor:opts.backgroundColor||'rgba(37,99,235,.78)',borderColor:'#2563eb',fill:opts.fill||false,tension:.35,pointRadius:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:opts.legend??false}},scales:type==='doughnut'?{}:{x:{grid:{display:false},ticks:{autoSkip:true,maxRotation:35,minRotation:0}},y:{beginAtZero:true,grid:{color:'#edf0f4'},ticks:{precision:0,callback:opts.money?(v)=>money0(v):undefined}}}}})}
 function donut(id,labels,data){const ctx=$(id);if(!ctx||!window.Chart)return;state.charts[id]=new Chart(ctx,{type:'doughnut',data:{labels,datasets:[{data,backgroundColor:['#2563eb','#5aa3ff','#7cc4a6','#f2b34a','#9aa4b2','#7b61a8'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:'64%',plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8}}}}})}
 function kpi(label,value,hint,ico='•'){return `<div class="surface kpi-card"><div class="kpi-top"><div><div class="kpi-label">${label}</div><div class="kpi-value">${value}</div><div class="kpi-hint">${hint}</div></div><div class="kpi-icon">${ico}</div></div></div>`}
 function portfolioRows(){return state.empreendimentos.map(e=>({e,m:empMetrics(e.id)})).sort((a,b)=>b.m.v-a.m.v)}
-async function renderHome(){await v4LoadAllData();applyPortfolioData(state._rawEmpreendimentos);clearCharts();state.view='home';setActiveNav('home');const rows=portfolioRows();const totalU=rows.reduce((s,x)=>s+x.m.u,0),totalV=rows.reduce((s,x)=>s+x.m.v,0),totalS=rows.reduce((s,x)=>s+x.m.sfh,0),pending=rows.reduce((s,x)=>s+x.m.pend,0);main().innerHTML=`<div class="page-head"><div><div class="eyebrow">VISÃO CORPORATIVA</div><h1>Todos os empreendimentos</h1><p>Portfólio completo. Selecione um empreendimento para liberar dashboard, unidades e relatórios operacionais.</p></div><div class="actions"><button class="secondary" onclick="openEmpModal()">＋ Novo empreendimento</button><button class="secondary" onclick="exportPortfolio()">⇩ Exportar portfólio</button></div></div>
-<div class="hero"><div class="hero-card"><div class="eyebrow">CENTRAL DE OPERAÇÕES</div><h2>Seu portfólio em um só lugar.</h2><p>A home consolida todos os empreendimentos sem misturar seus dados operacionais. O contexto é selecionado somente quando você entra no condomínio.</p></div><div class="hero-side"><div class="label">Cobertura SFH</div><div class="big">${totalV?fmtPct(totalS/totalV*100):'0%'}</div><div class="hint">${totalS} registros SFH em ${totalV} vendas</div></div></div>
-<div class="kpis">${kpi('Empreendimentos',state.empreendimentos.length,'Portfólio ativo',icon('building'))}${kpi('Unidades',totalU,'Base cadastrada',icon('unit'))}${kpi('Vendas',totalV,'Registros de venda',icon('sale'))}${kpi('Pendências SFH',pending,'Sem Data SFH',icon('sfh'))}</div>
-<div class="portfolio-grid"><div class="surface section"><div class="section-head"><div><h3>Carteira de empreendimentos</h3><div class="muted">Clique no card para entrar no contexto.</div></div><div class="muted">${rows.length} empreendimentos</div></div><div class="selector-grid">${rows.map(({e,m})=>`<article class="emp-card surface" onclick="selectEmp('${e.id}')"><div class="emp-top"><div class="emp-icon">🏢</div><span class="badge ${m.complete>=90?'success':m.complete>=70?'warn':'neutral'}">${m.complete}% completo</span></div><h3>${esc(e.nome)}</h3><div class="emp-meta">${esc(e.cidade||'Cidade não informada')} • ${esc(e.status||'Ativo')}</div><div class="emp-stats"><div class="mini-stat"><span>Unidades</span><strong>${m.u}</strong></div><div class="mini-stat"><span>Vendas</span><strong>${m.v}</strong></div><div class="mini-stat"><span>SFH</span><strong>${m.sfh}</strong></div></div><button class="primary" style="margin-top:13px;width:100%">Abrir empreendimento →</button></article>`).join('')||'<div class="empty">Nenhum empreendimento cadastrado.</div>'}</div></div><div class="surface section"><div class="section-head"><div><h3>Ranking de vendas</h3><div class="muted">Top empreendimentos do portfólio</div></div></div><div class="chart-box"><canvas id="homeRank"></canvas></div></div></div>`;setTimeout(()=>{const top=rows.slice(0,8);chart('homeRank','bar',top.map(x=>x.e.nome),top.map(x=>x.m.v),'Vendas',{backgroundColor:'rgba(37,99,235,.75)'})},0)}
+async function renderHome(){
+  await v4LoadAllData();applyPortfolioData(state._rawEmpreendimentos);clearCharts();
+  state.view='home';setActiveNav('home');
+  const rows=portfolioRows(),totalU=rows.reduce((s,x)=>s+x.m.u,0),totalV=rows.reduce((s,x)=>s+x.m.v,0),totalValue=rows.reduce((s,x)=>s+x.m.vgv,0);
+  main().innerHTML=`
+  <div class="page-head"><div><div class="eyebrow">PORTFÓLIO</div><h1 class="clean-title">Todos os empreendimentos</h1><p>Visão consolidada da base atual. Selecione um empreendimento para acessar seus dados operacionais.</p></div><div class="actions"><button class="secondary" onclick="openEmpModal()">＋ Novo empreendimento</button><button class="secondary" onclick="exportPortfolio()">⇩ Exportar</button></div></div>
+  <div class="home-summary"><span class="pill">${rows.length} empreendimentos</span><span class="sep">•</span><span class="pill">${totalU} unidades</span><span class="sep">•</span><span class="pill">${totalV} registros comerciais</span><span class="sep">•</span><span class="pill">${money0(totalValue)} em valor de venda</span></div>
+  <div class="kpis">${kpi('Empreendimentos',rows.length,'Portfólio atual',icon('building'))}${kpi('Unidades',totalU,'Cadastro atual',icon('unit'))}${kpi('Registros comerciais',totalV,'Base operacional',icon('sale'))}${kpi('Valor de venda',money0(totalValue),'Somatório cadastrado',icon('money'))}</div>
+  <div class="surface section portfolio-grid single" style="margin-top:14px">
+    <div class="section-head portfolio-head"><div><h3>Carteira</h3><div class="muted">Escolha um empreendimento para entrar no contexto</div></div><div class="muted">${rows.length} ativos no banco</div></div>
+    <div class="selector-grid">${rows.map(({e,m})=>`<article class="emp-card surface" onclick="selectEmp('${e.id}')" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectEmp('${e.id}')}"><div class="emp-top"><div class="emp-icon">${icon('building')}</div><span class="badge ${m.u?'success':'neutral'}">${m.u} unidades</span></div><h3>${esc(e.nome)}</h3><div class="emp-meta">${esc(e.cidade||'Cidade não informada')} ${e.status?`• ${esc(e.status)}`:''}</div><div class="emp-stats"><div class="mini-stat"><span>Comercial</span><strong>${m.v}</strong></div><div class="mini-stat"><span>VGV</span><strong>${money0(m.vgv)}</strong></div><div class="mini-stat"><span>SFH contratado</span><strong>${m.sfh}</strong></div></div><button class="primary" style="margin-top:13px;width:100%">${icon('dashboard')} Entrar no empreendimento</button></article>`).join('')||`<div class="empty-state"><strong>Nenhum empreendimento cadastrado</strong>Cadastre o primeiro empreendimento para começar.</div>`}</div>
+  </div>`;
+}
 function activeEnterpriseIds(){return new Set((state.empreendimentos||[]).map(e=>String(e.id)))}
-function currentPortfolioSales(){const ids=activeEnterpriseIds();const rows=[];Object.entries(state._allVendas||{}).forEach(([empId,arr])=>{if(!ids.has(String(empId)))return;(arr||[]).forEach(v=>{if(v?.id)rows.push({...v,empId:String(empId)})})});return rows}
-function filteredGlobal(){const all=currentPortfolioSales();const f=state.globalFilters||{};let rows=all;if(f.emp)rows=rows.filter(v=>v.empId===f.emp);if(f.tipo)rows=rows.filter(v=>v.tipo_venda===f.tipo);if(f.ano)rows=rows.filter(v=>v.data_sfh?.startsWith(f.ano));if(f.anoVenda)rows=rows.filter(v=>v.data_venda?.startsWith(f.anoVenda));if(f.complete==='com')rows=rows.filter(v=>!!v.data_sfh);if(f.complete==='sem')rows=rows.filter(v=>!v.data_sfh);if(f.status)rows=rows.filter(v=>v.status===f.status);if(f.minValor!=='')rows=rows.filter(v=>(Number(v.valor_venda)||0)>=Number(f.minValor));if(f.maxValor!=='')rows=rows.filter(v=>(Number(v.valor_venda)||0)<=Number(f.maxValor));if(f.q){const q=norm(f.q);rows=rows.filter(v=>{const u=(state._allUnits[v.empId]||[]).find(x=>x.id===v.unidade_id);const p=state._allOwners[v.proprietario_id];const e=state.empreendimentos.find(x=>x.id===v.empId);return norm(`${e?.nome||''} ${u?.codigo||''} ${p?.nome||''}`).includes(q)})}return rows}
-async function renderGlobalReport(){await v4LoadAllData();applyPortfolioData(state._rawEmpreendimentos);clearCharts();state.view='report-global';setActiveNav('report-global');const rows=filteredGlobal(),gf=state.globalFilters||{};const all=currentPortfolioSales();const types=[...new Set(all.map(v=>v.tipo_venda).filter(Boolean))].sort(),years=[...new Set(all.map(v=>v.data_sfh?.slice(0,4)).filter(Boolean))].sort(),saleYears=[...new Set(all.map(v=>v.data_venda?.slice(0,4)).filter(Boolean))].sort();const byType={},byTypeValue={},byYear={},byEmp={},byEmpValue={};rows.forEach(v=>{byType[v.tipo_venda]=(byType[v.tipo_venda]||0)+1;byTypeValue[v.tipo_venda]=(byTypeValue[v.tipo_venda]||0)+(Number(v.valor_venda)||0);if(v.data_venda){const y=v.data_venda.slice(0,4);byYear[y]=(byYear[y]||0)+(Number(v.valor_venda)||0)}byEmp[v.empId]=(byEmp[v.empId]||0)+1;byEmpValue[v.empId]=(byEmpValue[v.empId]||0)+(Number(v.valor_venda)||0)});const fin=financeSummary(rows);const complete=rows.filter(v=>v.data_sfh).length,pending=rows.length-complete;const empOptions=state.empreendimentos.map(e=>`<option value="${e.id}" ${gf.emp===e.id?'selected':''}>${esc(e.nome)}</option>`).join('');const typeOptions=types.map(t=>`<option value="${esc(t)}" ${gf.tipo===t?'selected':''}>${esc(t)}</option>`).join('');const yearOptions=years.map(y=>`<option value="${y}" ${gf.ano===y?'selected':''}>${y}</option>`).join('');const saleYearOptions=saleYears.map(y=>`<option value="${y}" ${gf.anoVenda===y?'selected':''}>${y}</option>`).join('');const statusOptions=[...new Set(all.map(v=>v.status).filter(Boolean))].sort().map(t=>`<option value="${esc(t)}" ${gf.status===t?'selected':''}>${esc(t)}</option>`).join('');const rank=Object.entries(byEmpValue).map(([id,value])=>({e:state.empreendimentos.find(e=>String(e.id)===String(id)),value})).filter(x=>x.e).sort((a,b)=>b.value-a.value).slice(0,10),compRows=state.empreendimentos.map(e=>({e,m:empMetrics(e.id)})).sort((a,b)=>b.m.complete-a.m.complete).slice(0,6);main().innerHTML=`<div class="page-head"><div><div class="eyebrow">VISÃO EXECUTIVA</div><h1>Relatório executivo</h1><p>Visão consolidada do portfólio, combinando desempenho comercial, financeiro, SFH e qualidade cadastral.</p></div><div class="actions"><button class="secondary" onclick="window.print()">⎙ Imprimir</button><button class="secondary" onclick="exportGlobalReport()">⇩ Exportar CSV</button></div></div><div class="surface filterbar"><input placeholder="Empreendimento, unidade ou proprietário..." value="${esc(gf.q||'')}" oninput="state.globalFilters.q=this.value;renderGlobalReport()"><select onchange="state.globalFilters.emp=this.value;renderGlobalReport()"><option value="">Todos os empreendimentos</option>${empOptions}</select><select onchange="state.globalFilters.tipo=this.value;renderGlobalReport()"><option value="">Todos os tipos de venda</option>${typeOptions}</select><select onchange="state.globalFilters.anoVenda=this.value;renderGlobalReport()"><option value="">Ano da venda — todos</option>${saleYearOptions}</select><select onchange="state.globalFilters.ano=this.value;renderGlobalReport()"><option value="">Ano SFH — todos</option>${yearOptions}</select><select onchange="state.globalFilters.complete=this.value;renderGlobalReport()"><option value="">SFH — todos</option><option value="com" ${gf.complete==='com'?'selected':''}>Com Data SFH</option><option value="sem" ${gf.complete==='sem'?'selected':''}>Sem Data SFH</option></select><select onchange="state.globalFilters.status=this.value;renderGlobalReport()"><option value="">Status — todos</option>${statusOptions}</select><input class="compact" type="number" min="0" step="0.01" placeholder="Valor mínimo" value="${esc(gf.minValor||'')}" oninput="state.globalFilters.minValor=this.value;renderGlobalReport()"><input class="compact" type="number" min="0" step="0.01" placeholder="Valor máximo" value="${esc(gf.maxValor||'')}" oninput="state.globalFilters.maxValor=this.value;renderGlobalReport()"><button class="secondary clear" onclick="state.globalFilters={q:'',emp:'',tipo:'',ano:'',anoVenda:'',complete:'',status:'',minValor:'',maxValor:''};renderGlobalReport()">Limpar</button></div><div class="report-kpis">${kpi('Registros',rows.length,'Universo filtrado',icon('sale'))}${kpi('Valor de venda',money0(fin.sale),'Valor bruto cadastrado',icon('money'))}${kpi('Ticket médio',money0(fin.avg),'Média por registro',icon('money'))}${kpi('Com Data SFH',complete,rows.length?fmtPct(complete/rows.length*100):'0%',icon('sfh'))}${kpi('Pendências',pending,'Sem Data SFH',icon('report'))}</div><div class="finance-strip">${[['Recursos próprios',fin.rp,'money'],['Financiamento',fin.fin,'money'],['FGTS',fin.fgts,'money'],['Subsídio',fin.sub,'money'],['Composição informada',fin.compTotal,'money']].map(x=>`<div class="surface finance-card"><div class="small">${x[0]}</div><strong>${money0(x[1])}</strong><span>Somatório do filtro</span></div>`).join('')}</div><div class="report-grid"><div class="surface section"><div class="section-head"><div><h3>Valor de vendas por empreendimento</h3><div class="muted">Ranking financeiro do universo filtrado</div></div></div><div class="chart-box tall"><canvas id="gValueEmp"></canvas></div></div><div class="surface section"><div class="section-head"><div><h3>Composição financeira</h3><div class="muted">Somente componentes informados</div></div></div><div class="chart-box"><canvas id="gFinance"></canvas></div></div></div><div class="report-grid"><div class="surface section"><div class="section-head"><div><h3>Valor de vendas por ano</h3><div class="muted">Baseado na Data da venda</div></div></div><div class="chart-box"><canvas id="gValueYear"></canvas></div></div><div class="surface section"><div class="section-head"><div><h3>Mix por tipo de venda</h3><div class="muted">Quantidade de registros</div></div></div><div class="chart-box"><canvas id="gType"></canvas></div></div></div><div class="report-grid three"><div class="surface section"><div class="section-head"><div><h3>SFH por ano</h3><div class="muted">Quantidade de Data SFH</div></div></div><div class="chart-box"><canvas id="gSfhYear"></canvas></div></div><div class="surface section"><div class="section-head"><div><h3>Qualidade cadastral</h3><div class="muted">Com Data SFH x pendências</div></div></div><div class="chart-box"><canvas id="gQuality"></canvas></div></div><div class="surface section"><div class="section-head"><div><h3>Empreendimentos por completude</h3><div class="muted">Top 8</div></div></div><div class="chart-box tall"><canvas id="gComplete"></canvas></div></div></div><div class="surface section" style="margin-top:15px"><div class="section-head"><div><h3>Leituras executivas</h3><div class="muted">Indicadores para acompanhamento gerencial</div></div></div><div class="insight-list"><div class="insight"><div class="dot"></div><div><strong>${rows.length?`${rows.length} registros compõem o filtro atual.`:'Nenhum registro atende aos filtros atuais.'}</strong><span>${rows.length?`${money0(fin.sale)} em valor de venda e ${pending} registros sem Data SFH.`:'Ajuste os filtros para ampliar a análise.'}</span></div></div><div class="insight"><div class="dot"></div><div><strong>${rank[0]?esc(rank[0].e.nome):'—'} concentra o maior valor de venda no filtro.</strong><span>${rank[0]?money0(rank[0].value):'Sem ranking disponível.'}</span></div></div><div class="insight"><div class="dot"></div><div><strong>${Object.entries(byType).sort((a,b)=>b[1]-a[1])[0]?.[0]||'—'} é o principal tipo de venda.</strong><span>${Object.entries(byType).sort((a,b)=>b[1]-a[1])[0]?`${Object.entries(byType).sort((a,b)=>b[1]-a[1])[0][1]} registros no filtro.`:'Sem dados suficientes.'}</span></div></div></div></div>`;setTimeout(()=>{chart('gValueEmp','bar',rank.map(x=>x.e.nome),rank.map(x=>x.value),'Valor de venda',{money:true});donut('gFinance',['Recursos próprios','Financiamento','FGTS','Subsídio'],[fin.rp,fin.fin,fin.fgts,fin.sub]);chart('gValueYear','line',Object.keys(byYear).sort(),Object.keys(byYear).sort().map(y=>byYear[y]),'Valor de venda',{fill:true});donut('gType',Object.keys(byType),Object.values(byType));chart('gSfhYear','bar',Object.keys(years).filter(y=>rows.some(v=>v.data_sfh?.startsWith(y))).sort(),Object.keys(years).filter(y=>rows.some(v=>v.data_sfh?.startsWith(y))).sort().map(y=>rows.filter(v=>v.data_sfh?.startsWith(y)).length),'Registros');donut('gQuality',['Com Data SFH','Sem Data SFH'],[complete,pending]);chart('gComplete','bar',compRows.map(x=>x.e.nome),compRows.map(x=>x.m.complete),'Completude %')},0)}
-function contextRows(){const f=state.contextFilters||{};return state.vendas.map(v=>{const u=state.unidades.find(x=>x.id===v.unidade_id)||{};const p=state.owners.find(x=>x.id===v.proprietario_id)||{};return {...v,u,p}}).filter(x=>{const q=norm(f.q);return (!q||norm(`${x.u.codigo||''} ${x.p.nome||''}`).includes(q))&&(!f.tipo||x.tipo_venda===f.tipo)&&(!f.status||x.status===f.status)&&(f.sfh===''||(f.sfh==='com'?!!x.data_sfh:!x.data_sfh))&&(!f.anoVenda||x.data_venda?.startsWith(f.anoVenda))&&(f.minValor===''||(Number(x.valor_venda)||0)>=Number(f.minValor))&&(f.maxValor===''||(Number(x.valor_venda)||0)<=Number(f.maxValor))})}
-function renderDashboard(){clearCharts();state.view='dashboard';persistWorkspace();setActiveNav('dashboard');const m={total:state.unidades.length,vendas:state.vendas.length,sfh:state.vendas.filter(v=>norm(v.tipo_venda)==='sfh contratado').length,pend:state.vendas.filter(v=>!v.data_sfh).length,owners:new Set(state.vendas.map(v=>v.proprietario_id).filter(Boolean)).size};const byType={};state.vendas.forEach(v=>byType[v.tipo_venda]=(byType[v.tipo_venda]||0)+1);const fin=financeSummary(state.vendas);const stage={adesao:state.vendas.filter(v=>norm(v.contrato_adesao_status)==='ok').length,cef:state.vendas.filter(v=>norm(v.contrato_cef_status)==='ok').length,vistoria:state.vendas.filter(v=>norm(v.vistoria_status)==='ok').length,receb:state.vendas.filter(v=>norm(v.recebimento_status)==='ok').length};main().innerHTML=`<div class="page-head"><div><div class="eyebrow">EMPREENDIMENTO</div><h1>${esc(state.selected.nome)}</h1><p>${esc(state.selected.cidade||'Cidade não informada')} • ${esc(state.selected.status||'Ativo')}</p></div><div class="actions"><button class="secondary" onclick="exportContext()">⇩ Exportar</button><button class="primary" onclick="openUnitModal()">＋ Novo cadastro</button></div></div><div class="kpis">${kpi('Unidades',m.total,'Cadastro do empreendimento',icon('unit'))}${kpi('Vendas',m.vendas,'Registros',icon('sale'))}${kpi('Valor de venda',money0(fin.sale),'Valor bruto cadastrado',icon('money'))}${kpi('Pendências SFH',m.pend,'Sem Data SFH',icon('report'))}</div><div class="finance-strip">${[['Recursos próprios',fin.rp],['Financiamento',fin.fin],['FGTS',fin.fgts],['Subsídio',fin.sub],['Ticket médio',fin.avg]].map((x,i)=>`<div class="surface finance-card"><div class="small">${x[0]}</div><strong>${money0(x[1])}</strong><span>${i===4?'Média por registro':'Somatório informado'}</span></div>`).join('')}</div><div class="report-grid"><div class="surface section"><div class="section-head"><div><h3>Composição comercial</h3><div class="muted">Quantidade por tipo de venda</div></div></div><div class="chart-box"><canvas id="dType"></canvas></div></div><div class="surface section"><div class="section-head"><div><h3>Composição financeira</h3><div class="muted">${fin.compRows} de ${m.vendas} registros com componentes informados (${fmtPct(fin.coverage)})</div></div></div><div class="chart-box"><canvas id="dFinance"></canvas></div></div></div><div class="surface section" style="margin-top:15px"><div class="section-head"><div><h3>Fluxo documental</h3><div class="muted">Registros com status “OK” por etapa</div></div></div><div class="stage-grid"><div class="stage"><div class="stage-name">Contrato de adesão</div><div class="stage-value">${stage.adesao} / ${m.vendas}</div></div><div class="stage"><div class="stage-name">Contrato CEF</div><div class="stage-value">${stage.cef} / ${m.vendas}</div></div><div class="stage"><div class="stage-name">Vistoria</div><div class="stage-value">${stage.vistoria} / ${m.vendas}</div></div><div class="stage"><div class="stage-name">Recebimento</div><div class="stage-value">${stage.receb} / ${m.vendas}</div></div></div></div><div class="surface section" style="margin-top:15px"><div class="section-head"><div><h3>Informações do empreendimento</h3><div class="muted">Cadastro mestre</div></div><button class="secondary" onclick="openEmpModal('${state.selected.id}')">Editar empreendimento</button></div><div class="detail-grid"><div class="detail"><span>Nome</span><strong>${esc(state.selected.nome)}</strong></div><div class="detail"><span>Status</span><strong>${esc(state.selected.status||'—')}</strong></div><div class="detail"><span>Cidade</span><strong>${esc(state.selected.cidade||'—')}</strong></div><div class="detail"><span>Construtora</span><strong>${esc(state.selected.construtora||'—')}</strong></div><div class="detail"><span>Endereço</span><strong>${esc(state.selected.endereco||'—')}</strong></div><div class="detail"><span>Proprietários distintos</span><strong>${m.owners}</strong></div></div></div>`;setTimeout(()=>{donut('dType',Object.keys(byType),Object.values(byType));donut('dFinance',['Recursos próprios','Financiamento','FGTS','Subsídio'],[fin.rp,fin.fin,fin.fgts,fin.sub])},0)}
+async function renderGlobalReport(){
+  await v4LoadAllData();applyPortfolioData(state._rawEmpreendimentos);clearCharts();state.view='report-global';setActiveNav('report-global');
+  const rows=filteredGlobal(),all=currentPortfolioSales(),gf=state.globalFilters||{},types=[...new Set(all.map(v=>v.tipo_venda).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt-BR')),saleYears=[...new Set(all.map(v=>String(v.data_venda||'').slice(0,4)).filter(Boolean))].sort();
+  const fin=financeSummary(rows),unitCount=state.empreendimentos.reduce((s,e)=>s+(state._allUnits[e.id]||[]).length,0),sfhContracted=rows.filter(v=>norm(v.tipo_venda)==='sfh contratado').length,sfhPending=rows.filter(v=>norm(v.tipo_venda)==='sfh por contratar').length;
+  const typeCount=reportTypeRows(rows),typeValue=reportValueByType(rows),byYear=reportValueByYear(rows),sfhYear=reportSfhByYear(rows);
+  const valueByEmp=state.empreendimentos.map(e=>({e,m:empMetrics(e.id)})).filter(x=>x.m.u>0||x.m.v>0).sort((a,b)=>b.m.vgv-a.m.vgv);
+  const empOptions=state.empreendimentos.map(e=>`<option value="${e.id}" ${String(gf.emp)===String(e.id)?'selected':''}>${esc(e.nome)}</option>`).join('');
+  const typeOptions=types.map(t=>`<option value="${esc(t)}" ${norm(gf.tipo)===norm(t)?'selected':''}>${esc(t)}</option>`).join('');
+  const saleYearOptions=saleYears.map(y=>`<option value="${y}" ${gf.anoVenda===y?'selected':''}>${y}</option>`).join('');
+  main().innerHTML=`
+  <div class="page-head"><div><div class="eyebrow">VISÃO EXECUTIVA</div><h1>Relatório executivo</h1><p>Indicadores calculados sobre as unidades e registros comerciais atualmente relacionados no banco.</p></div><div class="actions"><button class="secondary" onclick="window.print()">⎙ Imprimir</button><button class="secondary" onclick="exportGlobalReport()">⇩ Exportar CSV</button></div></div>
+  <div class="surface filters-card"><div class="filters-title"><strong>Filtros</strong><button class="ghost" onclick="state.globalFilters={q:'',emp:'',tipo:'',anoVenda:'',sfh:'',minValor:'',maxValor:''};renderGlobalReport()">Limpar filtros</button></div>
+    <div class="filter-grid">
+      <div class="filter-control"><input placeholder="Buscar empreendimento, unidade, bloco ou cliente..." value="${esc(gf.q||'')}" oninput="state.globalFilters.q=this.value;clearTimeout(window.__gft);window.__gft=setTimeout(renderGlobalReport,300)"></div>
+      <div class="filter-control"><select onchange="state.globalFilters.emp=this.value;renderGlobalReport()"><option value="">Todos os empreendimentos</option>${empOptions}</select></div>
+      <div class="filter-control"><select onchange="state.globalFilters.tipo=this.value;renderGlobalReport()"><option value="">Todos os tipos de venda</option>${typeOptions}</select></div>
+      <div class="filter-control"><select onchange="state.globalFilters.anoVenda=this.value;renderGlobalReport()"><option value="">Ano da venda — todos</option>${saleYearOptions}</select></div>
+      <div class="filter-control"><select onchange="state.globalFilters.sfh=this.value;renderGlobalReport()"><option value="">Data SFH — todos</option><option value="com" ${gf.sfh==='com'?'selected':''}>Com Data SFH</option><option value="sem" ${gf.sfh==='sem'?'selected':''}>Sem Data SFH</option></select></div>
+      <div class="filter-control"><input type="number" min="0" step="0.01" placeholder="Valor mínimo" value="${esc(gf.minValor||'')}" onchange="state.globalFilters.minValor=this.value;renderGlobalReport()"></div>
+    </div>
+    <div class="filter-actions"><span class="muted">Valor máximo</span><input type="number" min="0" step="0.01" placeholder="R$ máximo" value="${esc(gf.maxValor||'')}" onchange="state.globalFilters.maxValor=this.value;renderGlobalReport()"></div>
+  </div>
+  <div class="report-kpis">${kpi('Unidades',unitCount,'Universo atual',icon('unit'))}${kpi('Registros comerciais',rows.length,'Filtro atual',icon('sale'))}${kpi('VGV',money0(fin.sale),'Somatório com valor',icon('money'))}${kpi('Ticket médio',money0(fin.avg),`${fin.valuedCount} registros com valor`,icon('money'))}${kpi('SFH contratado',sfhContracted,'Tipo de venda',icon('sfh'))}${kpi('SFH por contratar',sfhPending,'Tipo de venda',icon('sfh'))}</div>
+  <div class="report-grid">
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>Valor de vendas por empreendimento</h3><div class="muted">VGV do universo filtrado</div></div></div><div class="chart-box tall"><canvas id="gValueEmp"></canvas></div></div>
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>Mix por tipo de venda</h3><div class="muted">Quantidade de registros</div></div></div><div class="chart-box"><canvas id="gType"></canvas></div></div>
+  </div>
+  <div class="report-grid">
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>Valor de vendas por ano</h3><div class="muted">Data da venda</div></div></div><div class="chart-box"><canvas id="gValueYear"></canvas></div></div>
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>Composição financeira</h3><div class="muted">Valores dos componentes informados</div></div></div><div class="chart-box"><canvas id="gFinance"></canvas></div></div>
+  </div>
+  <div class="report-grid three">
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>SFH por ano</h3><div class="muted">Data SFH</div></div></div><div class="chart-box compact"><canvas id="gSfhYear"></canvas></div></div>
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>Data SFH</h3><div class="muted">Registros com e sem data</div></div></div><div class="chart-box compact"><canvas id="gQuality"></canvas></div></div>
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>Unidades x comercial</h3><div class="muted">Cobertura do cadastro</div></div></div><div class="chart-box compact"><canvas id="gUnitsMix"></canvas></div></div>
+  </div>
+  <div class="surface section" style="margin-top:14px"><div class="section-head"><div><h3>Resumo por empreendimento</h3><div class="muted">Unidades, comercial, VGV e SFH</div></div></div>
+    <div class="executive-table-wrap"><table class="data-table"><thead><tr><th>Empreendimento</th><th>Unidades</th><th>Comercial</th><th>VGV</th><th>Ticket médio</th><th>SFH contratado</th><th>SFH por contratar</th></tr></thead><tbody>
+    ${valueByEmp.map(x=>`<tr><td><strong>${esc(x.e.nome)}</strong></td><td>${x.m.u}</td><td>${x.m.v}</td><td>${money0(x.m.vgv)}</td><td>${money0(x.m.avg)}</td><td>${x.m.sfh}</td><td>${x.m.sfhPending}</td></tr>`).join('')||`<tr><td colspan="7" class="empty-state">Nenhum dado encontrado.</td></tr>`}
+    </tbody></table></div>
+  </div>`;
+  setTimeout(()=>{
+    chart('gValueEmp','bar',valueByEmp.map(x=>x.e.nome),valueByEmp.map(x=>x.m.vgv),'VGV',{money:true});
+    donut('gType',typeCount.map(x=>x[0]),typeCount.map(x=>x[1]));
+    chart('gValueYear','line',byYear.map(x=>x[0]),byYear.map(x=>x[1]),'VGV',{fill:true,money:true});
+    donut('gFinance',['Recursos próprios','Financiamento','FGTS','Subsídio'],[fin.rp,fin.fin,fin.fgts,fin.sub]);
+    chart('gSfhYear','bar',sfhYear.map(x=>x[0]),sfhYear.map(x=>x[1]),'SFH');
+    const sfhWith=rows.filter(v=>!!v.data_sfh).length;donut('gQuality',['Com Data SFH','Sem Data SFH'],[sfhWith,Math.max(rows.length-sfhWith,0)]);
+    const mix=state.empreendimentos.reduce((a,e)=>{const us=state._allUnits[e.id]||[],vs=empSales(e.id);return [a[0]+us.length,a[1]+vs.length]},[0,0]);donut('gUnitsMix',['Com registro comercial','Disponível / sem registro'],[mix[1],Math.max(mix[0]-mix[1],0)]);
+  },0);
+}
+function contextRows(){
+  const f=state.contextFilters||{};let rows=[...(state.vendas||[])];
+  if(f.tipo) rows=rows.filter(v=>norm(v.tipo_venda)===norm(f.tipo));
+  if(f.sfh==='com') rows=rows.filter(v=>!!v.data_sfh);
+  if(f.sfh==='sem') rows=rows.filter(v=>!v.data_sfh);
+  if(f.anoVenda) rows=rows.filter(v=>String(v.data_venda||'').startsWith(f.anoVenda));
+  if(f.minValor!=='') rows=rows.filter(v=>Number.isFinite(Number(v.valor_venda)) && Number(v.valor_venda)>=Number(f.minValor));
+  if(f.maxValor!=='') rows=rows.filter(v=>Number.isFinite(Number(v.valor_venda)) && Number(v.valor_venda)<=Number(f.maxValor));
+  if(f.q){const q=norm(f.q),unitById={},ownerById={};state.unidades.forEach(u=>unitById[String(u.id)]=u);state.owners.forEach(p=>ownerById[String(p.id)]=p);rows=rows.filter(v=>{const u=unitById[String(v.unidade_id)]||{},p=ownerById[String(v.proprietario_id)]||{};return norm(`${u.codigo||''} ${u.bloco||''} ${p.nome||''}`).includes(q)})}
+  return rows;
+}
+function renderDashboard(){
+  clearCharts();state.view='dashboard';persistWorkspace();setActiveNav('dashboard');
+  const units=state.unidades||[],sales=state.vendas||[],fin=financeSummary(sales),soldIds=new Set(sales.map(v=>String(v.unidade_id))),byType=reportTypeRows(sales);
+  const sfhContracted=sales.filter(v=>norm(v.tipo_venda)==='sfh contratado').length,sfhPending=sales.filter(v=>norm(v.tipo_venda)==='sfh por contratar').length;
+  main().innerHTML=`
+  <div class="page-head"><div><div class="eyebrow">${esc(state.selected.nome)}</div><h1>${esc(state.selected.nome)}</h1><p>${esc(state.selected.cidade||'Cidade não informada')} ${state.selected.status?`• ${esc(state.selected.status)}`:''}</p></div><div class="actions"><button class="secondary" onclick="exportContext()">⇩ Exportar</button><button class="primary" onclick="openUnitModal()">＋ Novo cadastro</button></div></div>
+  <div class="kpis">${kpi('Unidades',units.length,'Base do empreendimento',icon('unit'))}${kpi('Registros comerciais',sales.length,'Tipos de venda',icon('sale'))}${kpi('VGV',money0(fin.sale),`${fin.valuedCount} registros com valor`,icon('money'))}${kpi('SFH contratado',sfhContracted,'Tipo de venda',icon('sfh'))}</div>
+  <div class="finance-strip" style="margin-top:14px">${[['Recursos próprios',fin.rp],['Financiamento',fin.fin],['FGTS',fin.fgts],['Subsídio',fin.sub]].map(x=>`<div class="surface finance-card"><div class="small">${x[0]}</div><strong>${money0(x[1])}</strong><span>Somatório cadastrado</span></div>`).join('')}</div>
+  <div class="report-grid">
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>Mix por tipo de venda</h3><div class="muted">Registros comerciais</div></div></div><div class="chart-box"><canvas id="dType"></canvas></div></div>
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>Composição financeira</h3><div class="muted">Componentes com valor informado</div></div></div><div class="chart-box"><canvas id="dFinance"></canvas></div></div>
+  </div>
+  <div class="report-grid">
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>Unidades x comercial</h3><div class="muted">Base cadastral</div></div></div><div class="chart-box"><canvas id="dUnits"></canvas></div></div>
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>Classificação SFH</h3><div class="muted">Tipo de venda</div></div></div><div class="chart-box"><canvas id="dSfh"></canvas></div></div>
+  </div>
+  <div class="surface section" style="margin-top:14px"><div class="section-head"><div><h3>Cadastro do empreendimento</h3><div class="muted">Dados mestre</div></div><button class="secondary" onclick="openEmpModal('${state.selected.id}')">Editar empreendimento</button></div><div class="detail-grid">
+    <div class="detail"><span>Nome</span><strong>${esc(state.selected.nome)}</strong></div><div class="detail"><span>Cidade</span><strong>${esc(state.selected.cidade||'—')}</strong></div><div class="detail"><span>Construtora</span><strong>${esc(state.selected.construtora||'—')}</strong></div><div class="detail"><span>Status</span><strong>${esc(state.selected.status||'—')}</strong></div><div class="detail"><span>Endereço</span><strong>${esc(state.selected.endereco||'—')}</strong></div><div class="detail"><span>Unidades sem registro comercial</span><strong>${Math.max(units.length-soldIds.size,0)}</strong></div>
+  </div></div>`;
+  const sfhOther=Math.max(sales.length-sfhContracted-sfhPending,0),mix=unitStatusMix(units,sales);
+  setTimeout(()=>{donut('dType',byType.map(x=>x[0]),byType.map(x=>x[1]));donut('dFinance',['Recursos próprios','Financiamento','FGTS','Subsídio'],[fin.rp,fin.fin,fin.fgts,fin.sub]);donut('dUnits',mix.map(x=>x[0]),mix.map(x=>x[1]));donut('dSfh',['SFH contratado','SFH por contratar','Outros tipos'],[sfhContracted,sfhPending,sfhOther])},0);
+}
 function unitRows(){
   const f=state.contextFilters||{};
   const q=norm(f.q||'');
@@ -322,26 +527,71 @@ function unitRows(){
 }
 
 function renderUnits(){
-  state.view='units';
-  persistWorkspace();
-  setActiveNav('units');
-  if(!state.contextFilters) state.contextFilters={q:'',tipo:'',sfh:'',status:'',anoVenda:'',minValor:'',maxValor:''};
-  const data=unitRows();
-  const types=[...new Set((state.vendas||[]).map(v=>v.tipo_venda).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt-BR'));
-  const statuses=[...new Set([
-    ...(state.unidades||[]).map(u=>u.status).filter(Boolean),
-    ...(state.vendas||[]).map(v=>v.status).filter(Boolean)
-  ])].sort((a,b)=>a.localeCompare(b,'pt-BR'));
-  const saleYears=[...new Set((state.vendas||[]).map(v=>v.data_venda?.slice(0,4)).filter(Boolean))].sort();
-  const sold=data.filter(x=>x.hasSale).length;
-  const available=data.filter(x=>!x.hasSale).length;
-  const value=data.reduce((s,x)=>s+(Number(x.v.valor_venda)||0),0);
-  main().innerHTML=`<div class="page-head"><div><div class="eyebrow">${esc(state.selected.nome)}</div><h1>Unidades</h1><p>Visão completa das unidades do empreendimento, incluindo disponíveis, vendidas, proprietário, financeiro e fluxo documental.</p></div><div class="actions"><button class="secondary" onclick="exportContext()">⇩ Exportar CSV</button><button class="primary" onclick="openUnitModal()">＋ Novo cadastro</button></div></div>
-<div class="kpis">${kpi('Unidades',state.unidades.length,'Total cadastrado',icon('unit'))}${kpi('Com venda',sold,'Registros comerciais',icon('sale'))}${kpi('Sem venda',available,'Disponíveis / sem vínculo',icon('building'))}${kpi('Valor filtrado',money0(value),'Valor de venda exibido',icon('sale'))}</div>
-<div class="surface filterbar"><input placeholder="Buscar unidade, bloco ou proprietário..." value="${esc(state.contextFilters.q)}" oninput="state.contextFilters.q=this.value;renderUnits()"><select onchange="state.contextFilters.tipo=this.value;renderUnits()"><option value="">Todos os tipos</option>${types.map(t=>`<option value="${esc(t)}" ${state.contextFilters.tipo===t?'selected':''}>${esc(t)}</option>`).join('')}</select><select onchange="state.contextFilters.status=this.value;renderUnits()"><option value="">Todos os status</option>${statuses.map(t=>`<option value="${esc(t)}" ${state.contextFilters.status===t?'selected':''}>${esc(t)}</option>`).join('')}</select><select onchange="state.contextFilters.sfh=this.value;renderUnits()"><option value="">Data SFH — todos</option><option value="com" ${state.contextFilters.sfh==='com'?'selected':''}>Com Data SFH</option><option value="sem" ${state.contextFilters.sfh==='sem'?'selected':''}>Sem Data SFH</option></select><select onchange="state.contextFilters.anoVenda=this.value;renderUnits()"><option value="">Ano da venda — todos</option>${saleYears.map(y=>`<option value="${y}" ${state.contextFilters.anoVenda===y?'selected':''}>${y}</option>`).join('')}</select><button class="secondary clear" onclick="state.contextFilters={q:'',tipo:'',sfh:'',status:'',anoVenda:'',minValor:'',maxValor:''};renderUnits()">Limpar</button></div>
-<div class="surface notice" style="margin-bottom:14px"><strong>${state.unidades.length} unidades lidas do Supabase</strong><span class="muted"> • ${data.length} exibidas após filtros • ${sold} com venda • ${available} sem venda • Empreendimento: ${esc(state.selected.nome)}</span></div><div class="surface section"><div class="section-head"><div><h3>${data.length} unidades</h3><div class="muted">${sold} com venda • ${available} sem venda • ${esc(state.selected.nome)}</div></div><div class="muted">${money0(value)} em valor de venda</div></div><div style="overflow:auto"><table class="data-table"><thead><tr><th>Unidade</th><th>Bloco</th><th>Status</th><th>Proprietário</th><th>Venda</th><th>Data SFH</th><th>Valor</th><th>Financiamento</th><th>Doc CEF</th><th>Vistoria</th><th>Recebimento</th><th></th></tr></thead><tbody>${data.map(x=>`<tr><td><strong>${esc(x.codigo||'—')}</strong></td><td>${esc(x.bloco||'—')}</td><td><span class="badge ${x.hasSale?'success':'neutral'}">${esc(x.comercialStatus||'—')}</span></td><td>${esc(x.p.nome||'—')}</td><td>${x.v.tipo_venda?`<span class="badge ${norm(x.v.tipo_venda).includes('sfh')?'success':'neutral'}">${esc(x.v.tipo_venda)}</span>`:'<span class="muted">Sem venda</span>'}</td><td>${fmtDate(x.v.data_sfh)}</td><td>${x.v.valor_venda!=null?moneyFmt.format(x.v.valor_venda):'—'}</td><td>${x.v.financiamento!=null?moneyFmt.format(x.v.financiamento):'—'}</td><td>${esc(x.v.contrato_cef_status||'—')}</td><td>${esc(x.v.vistoria_status||'—')}</td><td>${esc(x.v.recebimento_status||'—')}</td><td><button class="secondary" onclick="openUnitModal('${x.id}')">Editar</button></td></tr>`).join('')||'<tr><td colspan="12" style="text-align:center;padding:28px;color:#7a8495">Nenhuma unidade encontrada para os filtros aplicados.</td></tr>'}</tbody></table></div></div>`;
+  state.view='units';persistWorkspace();setActiveNav('units');
+  if(!state.contextFilters)state.contextFilters={q:'',tipo:'',sfh:'',anoVenda:'',minValor:'',maxValor:''};
+  const data=unitRows(),types=[...new Set((state.vendas||[]).map(v=>v.tipo_venda).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt-BR')),saleYears=[...new Set((state.vendas||[]).map(v=>String(v.data_venda||'').slice(0,4)).filter(Boolean))].sort(),sold=data.filter(x=>x.hasSale).length,available=data.length-sold,value=data.reduce((s,x)=>s+(Number(x.v.valor_venda)||0),0);
+  main().innerHTML=`
+  <div class="page-head"><div><div class="eyebrow">${esc(state.selected.nome)}</div><h1>Unidades</h1><p>Cadastro integral das unidades. Clique em qualquer linha para abrir a ficha completa.</p></div><div class="actions"><button class="secondary" onclick="exportContext()">⇩ Exportar</button><button class="primary" onclick="openUnitModal()">＋ Novo cadastro</button></div></div>
+  <div class="kpis">${kpi('Unidades',state.unidades.length,'Base do empreendimento',icon('unit'))}${kpi('Com registro comercial',sold,'Não inclui disponíveis',icon('sale'))}${kpi('Sem registro comercial',available,'Sem venda vinculada',icon('building'))}${kpi('VGV filtrado',money0(value),'Somatório exibido',icon('money'))}</div>
+  <div class="surface filters-card"><div class="filters-title"><strong>Filtros de unidades</strong><button class="ghost" onclick="state.contextFilters={q:'',tipo:'',sfh:'',anoVenda:'',minValor:'',maxValor:''};renderUnits()">Limpar filtros</button></div>
+    <div class="filter-grid">
+      <div class="filter-control"><input placeholder="Buscar unidade, bloco ou cliente..." value="${esc(state.contextFilters.q||'')}" oninput="state.contextFilters.q=this.value;clearTimeout(window.__ut);window.__ut=setTimeout(renderUnits,250)"></div>
+      <div class="filter-control"><select onchange="state.contextFilters.tipo=this.value;renderUnits()"><option value="">Todos os tipos</option>${types.map(t=>`<option value="${esc(t)}" ${norm(state.contextFilters.tipo)===norm(t)?'selected':''}>${esc(t)}</option>`).join('')}</select></div>
+      <div class="filter-control"><select onchange="state.contextFilters.sfh=this.value;renderUnits()"><option value="">Data SFH — todos</option><option value="com" ${state.contextFilters.sfh==='com'?'selected':''}>Com Data SFH</option><option value="sem" ${state.contextFilters.sfh==='sem'?'selected':''}>Sem Data SFH</option></select></div>
+      <div class="filter-control"><select onchange="state.contextFilters.anoVenda=this.value;renderUnits()"><option value="">Ano da venda — todos</option>${saleYears.map(y=>`<option value="${y}" ${state.contextFilters.anoVenda===y?'selected':''}>${y}</option>`).join('')}</select></div>
+      <div class="filter-control"><input type="number" min="0" step="0.01" placeholder="Valor mínimo" value="${esc(state.contextFilters.minValor||'')}" onchange="state.contextFilters.minValor=this.value;renderUnits()"></div>
+      <div class="filter-control"><input type="number" min="0" step="0.01" placeholder="Valor máximo" value="${esc(state.contextFilters.maxValor||'')}" onchange="state.contextFilters.maxValor=this.value;renderUnits()"></div>
+    </div>
+  </div>
+  <div class="surface section"><div class="section-head"><div><h3>${data.length} unidades</h3><div class="muted">${sold} com registro comercial • ${available} sem registro</div></div><div class="muted">${money0(value)} em valor</div></div>
+    <div class="executive-table-wrap"><table class="data-table"><thead><tr><th>Unidade</th><th>Bloco</th><th>Status</th><th>Cliente</th><th>Tipo de venda</th><th>Data da venda</th><th>Data SFH</th><th>Valor</th><th>Financiamento</th></tr></thead><tbody>
+    ${data.map(x=>`<tr class="unit-row" tabindex="0" role="button" title="Abrir ficha da unidade ${esc(x.codigo||'')}" onclick="openUnitModal('${x.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openUnitModal('${x.id}') }"><td class="table-link">${esc(x.codigo||'—')}</td><td>${esc(x.bloco||'—')}</td><td><span class="badge ${x.hasSale?'success':'neutral'}">${esc(x.comercialStatus||'Disponível')}</span></td><td>${esc(x.p.nome||'—')}</td><td>${x.v.tipo_venda?`<span class="badge ${norm(x.v.tipo_venda).includes('sfh')?'success':'neutral'}">${esc(x.v.tipo_venda)}</span>`:'<span class="muted">—</span>'}</td><td>${fmtDate(x.v.data_venda)}</td><td>${fmtDate(x.v.data_sfh)}</td><td>${x.v.valor_venda!=null?moneyFmt.format(x.v.valor_venda):'—'}</td><td>${x.v.financiamento!=null?moneyFmt.format(x.v.financiamento):'—'}</td></tr>`).join('')||`<tr><td colspan="9" class="empty-state">Nenhuma unidade encontrada para os filtros aplicados.</td></tr>`}
+    </tbody></table></div><div class="table-note">Toda a linha é clicável. A ficha pode conter informações adicionais do cadastro sem utilizá-las como registros de relatório.</div>
+  </div>`;
 }
-function renderContextReport(){clearCharts();state.view='report-context';persistWorkspace();setActiveNav('report-context');const data=contextRows(),all=state.vendas,types={},years={},saleYears={},floors={};data.forEach(v=>{types[v.tipo_venda]=(types[v.tipo_venda]||0)+1;if(v.data_sfh){const y=v.data_sfh.slice(0,4);years[y]=(years[y]||0)+1}if(v.data_venda){const y=v.data_venda.slice(0,4);saleYears[y]=(saleYears[y]||0)+(Number(v.valor_venda)||0)}});state.unidades.forEach(u=>{const k=u.andar||'Não informado';floors[k]=(floors[k]||0)+1});const topFloors=Object.entries(floors).sort((a,b)=>b[1]-a[1]).slice(0,8),comp=data.filter(v=>v.data_sfh).length,pending=data.length-comp,fin=financeSummary(data),stage={adesao:data.filter(v=>norm(v.contrato_adesao_status)==='ok').length,cef:data.filter(v=>norm(v.contrato_cef_status)==='ok').length,vistoria:data.filter(v=>norm(v.vistoria_status)==='ok').length,receb:data.filter(v=>norm(v.recebimento_status)==='ok').length};main().innerHTML=`<div class="page-head"><div><div class="eyebrow">${esc(state.selected.nome)}</div><h1>Relatórios</h1><p>Visão comercial, financeira, documental e operacional do empreendimento selecionado.</p></div><div class="actions"><button class="secondary" onclick="window.print()">⎙ Imprimir</button><button class="secondary" onclick="exportContext()">⇩ Exportar CSV</button></div></div><div class="surface filterbar"><input placeholder="Unidade ou proprietário..." value="${esc(state.contextFilters.q)}" oninput="state.contextFilters.q=this.value;renderContextReport()"><select onchange="state.contextFilters.tipo=this.value;renderContextReport()"><option value="">Todos os tipos</option>${Object.keys(types).sort().map(t=>`<option value="${esc(t)}" ${state.contextFilters.tipo===t?'selected':''}>${esc(t)}</option>`).join('')}</select><select onchange="state.contextFilters.sfh=this.value;renderContextReport()"><option value="">Data SFH — todos</option><option value="com" ${state.contextFilters.sfh==='com'?'selected':''}>Com Data SFH</option><option value="sem" ${state.contextFilters.sfh==='sem'?'selected':''}>Sem Data SFH</option></select><select onchange="state.contextFilters.status=this.value;renderContextReport()"><option value="">Todos os status</option>${[...new Set(all.map(v=>v.status).filter(Boolean))].sort().map(t=>`<option value="${esc(t)}" ${state.contextFilters.status===t?'selected':''}>${esc(t)}</option>`).join('')}</select><select onchange="state.contextFilters.anoVenda=this.value;renderContextReport()"><option value="">Ano da venda — todos</option>${Object.keys(saleYears).sort().map(y=>`<option value="${y}" ${state.contextFilters.anoVenda===y?'selected':''}>${y}</option>`).join('')}</select><button class="secondary clear" onclick="state.contextFilters={q:'',tipo:'',sfh:'',status:'',anoVenda:'',minValor:'',maxValor:''};renderContextReport()">Limpar</button></div><div class="report-kpis">${kpi('Registros',data.length,'Universo filtrado',icon('sale'))}${kpi('Valor de venda',money0(fin.sale),'Valor bruto',icon('money'))}${kpi('Ticket médio',money0(fin.avg),'Por registro',icon('money'))}${kpi('Com Data SFH',comp,data.length?fmtPct(comp/data.length*100):'0%',icon('sfh'))}${kpi('Pendências',pending,'Sem Data SFH',icon('report'))}</div><div class="finance-strip">${[['Recursos próprios',fin.rp],['Financiamento',fin.fin],['FGTS',fin.fgts],['Subsídio',fin.sub],['Composição informada',fin.compTotal]].map(x=>`<div class="surface finance-card"><div class="small">${x[0]}</div><strong>${money0(x[1])}</strong><span>${fin.compRows} registros com composição</span></div>`).join('')}</div><div class="report-grid"><div class="surface section"><div class="section-head"><div><h3>Valor de vendas por ano</h3><div class="muted">Baseado na Data da venda</div></div></div><div class="chart-box"><canvas id="rValueYear"></canvas></div></div><div class="surface section"><div class="section-head"><div><h3>Composição financeira</h3><div class="muted">Componentes informados</div></div></div><div class="chart-box"><canvas id="rFinance"></canvas></div></div></div><div class="report-grid three"><div class="surface section"><div class="section-head"><div><h3>Mix por tipo de venda</h3><div class="muted">Quantidade</div></div></div><div class="chart-box"><canvas id="rType"></canvas></div></div><div class="surface section"><div class="section-head"><div><h3>Qualidade cadastral</h3><div class="muted">Com Data SFH x pendências</div></div></div><div class="chart-box"><canvas id="rQuality"></canvas></div></div><div class="surface section"><div class="section-head"><div><h3>Distribuição por andar</h3><div class="muted">Unidades cadastradas</div></div></div><div class="chart-box tall"><canvas id="rFloor"></canvas></div></div></div><div class="surface section" style="margin-top:15px"><div class="section-head"><div><h3>Fluxo documental</h3><div class="muted">Acompanhamento das etapas do processo</div></div></div><div class="stage-grid"><div class="stage"><div class="stage-name">Contrato de adesão</div><div class="stage-value">${stage.adesao} / ${data.length}</div></div><div class="stage"><div class="stage-name">Contrato CEF</div><div class="stage-value">${stage.cef} / ${data.length}</div></div><div class="stage"><div class="stage-name">Vistoria</div><div class="stage-value">${stage.vistoria} / ${data.length}</div></div><div class="stage"><div class="stage-name">Recebimento</div><div class="stage-value">${stage.receb} / ${data.length}</div></div></div></div><div class="surface section" style="margin-top:15px"><div class="section-head"><div><h3>Leituras executivas</h3><div class="muted">Prioridades do empreendimento</div></div></div><div class="insight-list"><div class="insight"><div class="dot"></div><div><strong>${pending} registros sem Data SFH.</strong><span>Base para saneamento e acompanhamento do processo.</span></div></div><div class="insight"><div class="dot"></div><div><strong>${money0(fin.sale)} em valor de venda.</strong><span>Ticket médio de ${money0(fin.avg)} no filtro atual.</span></div></div><div class="insight"><div class="dot"></div><div><strong>${fin.compRows} registros com composição financeira informada.</strong><span>Cobertura financeira detalhada de ${fmtPct(fin.coverage)}.</span></div></div></div></div>`;setTimeout(()=>{chart('rValueYear','line',Object.keys(saleYears).sort(),Object.keys(saleYears).sort().map(y=>saleYears[y]),'Valor de venda',{fill:true});donut('rFinance',['Recursos próprios','Financiamento','FGTS','Subsídio'],[fin.rp,fin.fin,fin.fgts,fin.sub]);donut('rType',Object.keys(types),Object.values(types));donut('rQuality',['Com Data SFH','Sem Data SFH'],[comp,pending]);chart('rFloor','bar',topFloors.map(x=>x[0]),topFloors.map(x=>x[1]),'Unidades')},0)}
+function renderContextReport(){
+  clearCharts();state.view='report-context';persistWorkspace();setActiveNav('report-context');
+  const data=contextRows(),all=state.vendas||[],fin=financeSummary(data),cf=state.contextFilters||{};
+  const types=reportTypeRows(data),typeValue=reportValueByType(data),byYear=reportValueByYear(data),sfhYear=reportSfhByYear(data);
+  const sfhContracted=data.filter(v=>norm(v.tipo_venda)==='sfh contratado').length,sfhPending=data.filter(v=>norm(v.tipo_venda)==='sfh por contratar').length;
+  const saleYears=[...new Set(all.map(v=>String(v.data_venda||'').slice(0,4)).filter(Boolean))].sort();
+  main().innerHTML=`
+  <div class="page-head"><div><div class="eyebrow">${esc(state.selected.nome)}</div><h1>Relatórios</h1><p>Análise do empreendimento selecionado com base nos campos comerciais, financeiros e SFH da base atual.</p></div><div class="actions"><button class="secondary" onclick="window.print()">⎙ Imprimir</button><button class="secondary" onclick="exportContext()">⇩ Exportar CSV</button></div></div>
+  <div class="surface filters-card"><div class="filters-title"><strong>Filtros</strong><button class="ghost" onclick="state.contextFilters={q:'',tipo:'',sfh:'',anoVenda:'',minValor:'',maxValor:''};renderContextReport()">Limpar filtros</button></div>
+    <div class="filter-grid">
+      <div class="filter-control"><input placeholder="Buscar unidade, bloco ou cliente..." value="${esc(cf.q||'')}" oninput="state.contextFilters.q=this.value;clearTimeout(window.__cft);window.__cft=setTimeout(renderContextReport,300)"></div>
+      <div class="filter-control"><select onchange="state.contextFilters.tipo=this.value;renderContextReport()"><option value="">Todos os tipos</option>${[...new Set(all.map(v=>v.tipo_venda).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt-BR')).map(t=>`<option value="${esc(t)}" ${norm(cf.tipo)===norm(t)?'selected':''}>${esc(t)}</option>`).join('')}</select></div>
+      <div class="filter-control"><select onchange="state.contextFilters.anoVenda=this.value;renderContextReport()"><option value="">Ano da venda — todos</option>${saleYears.map(y=>`<option value="${y}" ${cf.anoVenda===y?'selected':''}>${y}</option>`).join('')}</select></div>
+      <div class="filter-control"><select onchange="state.contextFilters.sfh=this.value;renderContextReport()"><option value="">Data SFH — todos</option><option value="com" ${cf.sfh==='com'?'selected':''}>Com Data SFH</option><option value="sem" ${cf.sfh==='sem'?'selected':''}>Sem Data SFH</option></select></div>
+      <div class="filter-control"><input type="number" min="0" step="0.01" placeholder="Valor mínimo" value="${esc(cf.minValor||'')}" onchange="state.contextFilters.minValor=this.value;renderContextReport()"></div>
+      <div class="filter-control"><input type="number" min="0" step="0.01" placeholder="Valor máximo" value="${esc(cf.maxValor||'')}" onchange="state.contextFilters.maxValor=this.value;renderContextReport()"></div>
+    </div>
+  </div>
+  <div class="report-kpis">${kpi('Unidades',state.unidades.length,'Base do empreendimento',icon('unit'))}${kpi('Registros comerciais',data.length,'Filtro atual',icon('sale'))}${kpi('VGV',money0(fin.sale),'Somatório com valor',icon('money'))}${kpi('Ticket médio',money0(fin.avg),`${fin.valuedCount} registros com valor`,icon('money'))}${kpi('SFH contratado',sfhContracted,'Tipo de venda',icon('sfh'))}</div>
+  <div class="report-grid">
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>Valor de vendas por ano</h3><div class="muted">Data da venda</div></div></div><div class="chart-box"><canvas id="rValueYear"></canvas></div></div>
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>Mix por tipo de venda</h3><div class="muted">Quantidade</div></div></div><div class="chart-box"><canvas id="rType"></canvas></div></div>
+  </div>
+  <div class="report-grid">
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>Composição financeira</h3><div class="muted">Componentes preenchidos</div></div></div><div class="chart-box"><canvas id="rFinance"></canvas></div></div>
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>SFH por ano</h3><div class="muted">Data SFH</div></div></div><div class="chart-box"><canvas id="rSfhYear"></canvas></div></div>
+  </div>
+  <div class="report-grid">
+    <div class="surface section report-chart-card"><div class="section-head"><div><h3>Data SFH</h3><div class="muted">Com e sem data</div></div></div><div class="chart-box"><canvas id="rQuality"></canvas></div></div>
+    <div class="surface section"><div class="section-head"><div><h3>Resumo por tipo</h3><div class="muted">Quantidade, VGV e participação</div></div></div>
+      <div class="executive-table-wrap"><table class="data-table"><thead><tr><th>Tipo de venda</th><th>Registros</th><th>VGV</th><th>Participação</th></tr></thead><tbody>
+      ${types.map(([t,c])=>`<tr><td><strong>${esc(t)}</strong></td><td>${c}</td><td>${money0(typeValue.find(x=>x[0]===t)?.[1]||0)}</td><td>${data.length?fmtPct(c/data.length*100):'0%'}</td></tr>`).join('')||`<tr><td colspan="4" class="empty-state">Nenhum registro encontrado.</td></tr>`}
+      </tbody></table></div>
+    </div>
+  </div>`;
+  setTimeout(()=>{
+    chart('rValueYear','line',byYear.map(x=>x[0]),byYear.map(x=>x[1]),'VGV',{fill:true,money:true});
+    donut('rType',types.map(x=>x[0]),types.map(x=>x[1]));
+    donut('rFinance',['Recursos próprios','Financiamento','FGTS','Subsídio'],[fin.rp,fin.fin,fin.fgts,fin.sub]);
+    chart('rSfhYear','bar',sfhYear.map(x=>x[0]),sfhYear.map(x=>x[1]),'SFH');
+    const sfhWith=data.filter(v=>!!v.data_sfh).length;donut('rQuality',['Com Data SFH','Sem Data SFH'],[sfhWith,Math.max(data.length-sfhWith,0)]);
+  },0);
+}
 async function openEmpModal(empId){const e=state.empreendimentos.find(x=>x.id===empId);$('modal').classList.remove('hidden');$('modal').innerHTML=`<div class="modal-card"><div class="modal-head"><strong>${e?'Editar empreendimento':'Cadastrar empreendimento'}</strong><button class="secondary" onclick="closeModal()">Fechar</button></div><form id="empForm"><div class="modal-body"><div class="formgrid"><div class="field"><label>Nome *</label><input name="nome" value="${esc(e?.nome||'')}" required></div><div class="field"><label>Status</label><select name="status"><option ${!e||e.status==='Ativo'?'selected':''}>Ativo</option><option ${e?.status==='Inativo'?'selected':''}>Inativo</option></select></div><div class="field"><label>Cidade</label><input name="cidade" value="${esc(e?.cidade||'')}"></div><div class="field"><label>Construtora</label><input name="construtora" value="${esc(e?.construtora||'')}"></div><div class="field span2"><label>Endereço</label><input name="endereco" value="${esc(e?.endereco||'')}"></div></div></div><div class="modal-actions">${e?`<button type="button" class="danger" onclick="deleteEmp('${e.id}')">Excluir</button>`:''}<span style="flex:1"></span><button type="button" class="secondary" onclick="closeModal()">Cancelar</button><button class="primary">Salvar</button></div></form></div>`;$('empForm').onsubmit=async ev=>{ev.preventDefault();await saveEmp(e,new FormData(ev.target))}}
 async function saveEmp(e,f){const payload={nome:String(f.get('nome')||'').trim(),status:f.get('status')||'Ativo',cidade:String(f.get('cidade')||'').trim()||null,construtora:String(f.get('construtora')||'').trim()||null,endereco:String(f.get('endereco')||'').trim()||null};if(!payload.nome)return toast('Informe o nome do empreendimento.','err');loading(true,'Salvando empreendimento…');try{const r=e?await sb.from('empreendimentos').update(payload).eq('id',e.id).select().single():await sb.from('empreendimentos').insert(payload).select().single();if(r.error)throw r.error;closeModal();state.allLoaded=false;await loadEmpreendimentos();toast(e?'Empreendimento atualizado.':'Empreendimento criado.','ok');if(r.data&&e?.id===state.selected?.id){state.selected=r.data;await loadContext();renderDashboard()}else if(!e&&r.data){await selectEmp(r.data.id)}else{goHome()}}catch(err){toast(err.message||'Não foi possível salvar.','err')}finally{loading(false)}}
 async function deleteEmp(id){if(!confirm('Excluir este empreendimento e as unidades/vendas vinculadas?'))return;loading(true,'Excluindo empreendimento…');try{const {error}=await sb.from('empreendimentos').delete().eq('id',id);if(error)throw error;closeModal();state.allLoaded=false;state.selected=null;await loadEmpreendimentos();toast('Empreendimento excluído.','ok');goHome()}catch(err){toast(err.message||'Não foi possível excluir.','err')}finally{loading(false)}}
@@ -350,13 +600,34 @@ async function saveUnit(u,v,f){loading(true,'Salvando cadastro…');try{const pa
 async function deleteUnit(id){if(!confirm('Excluir esta unidade e a venda vinculada?'))return;loading(true,'Excluindo cadastro…');try{const {error}=await sb.from('unidades').delete().eq('id',id);if(error)throw error;state.allLoaded=false;await loadContext();toast('Cadastro excluído.','ok');closeModal();renderUnits()}catch(err){toast(err.message||'Não foi possível excluir.','err')}finally{loading(false)}}
 function closeModal(){$('modal').classList.add('hidden');$('modal').innerHTML=''}
 function exportRows(rows,filename){const csv=rows.map(r=>r.map(x=>'"'+String(x??'').replaceAll('"','""')+'"').join(';')).join('\n');const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;a.click();URL.revokeObjectURL(a.href)}
-function exportPortfolio(){const rows=portfolioRows().map(({e,m})=>[e.nome,e.cidade||'',e.status||'',m.u,m.v,m.sfh,m.pend,m.complete+'%']);exportRows([['Empreendimento','Cidade','Status','Unidades','Vendas','SFH','Sem Data SFH','Completude'],...rows],'portfolio_empreendimentos.csv')}
-function exportGlobalReport(){const rows=filteredGlobal().map(v=>{const e=state.empreendimentos.find(x=>x.id===v.empId);const u=(state._allUnits[v.empId]||[]).find(x=>x.id===v.unidade_id);const p=state._allOwners[v.proprietario_id];return[e?.nome||'',u?.codigo||'',p?.nome||'',p?.documento||'',v.data_venda||'',v.tipo_venda||'',v.valor_venda??'',v.recursos_proprios??'',v.financiamento??'',v.fgts??'',v.subsidio??'',v.data_sfh||'',v.contrato_adesao_status||'',v.contrato_cef_status||'',v.contrato_cef_data||'',v.vistoria_status||'',v.vistoria_data||'',v.recebimento_status||'',v.recebimento_data||'',v.status||'',v.link_doc||'',v.observacoes||'']});exportRows([['Empreendimento','Unidade','Proprietário','CPF/CNPJ','Data da venda','Tipo de Venda','Valor de venda','Recursos Próprios','Financiamento','FGTS','Subsídio','Data SFH','Contrato Adesão','Contrato CEF','Data CEF','Vistoria','Data Vistoria','Recebimento','Data Recebimento','Status','Link Doc.','Observações'],...rows],'relatorio_executivo_v6.csv')}
-function exportContext(){const vendaByUnit={};(state.vendas||[]).forEach(v=>{vendaByUnit[v.unidade_id]=v});const rows=(state.unidades||[]).map(u=>{const v=vendaByUnit[u.id]||{};const p=(state.owners||[]).find(x=>x.id===v.proprietario_id)||{};return[state.selected.nome,u?.codigo||'',u?.bloco||'',u?.andar||'',u?.status||'',p?.nome||'',p?.documento||'',v.data_venda||'',v.tipo_venda||'',v.valor_venda??'',v.recursos_proprios??'',v.financiamento??'',v.fgts??'',v.subsidio??'',v.data_sfh||'',v.contrato_adesao_status||'',v.contrato_cef_status||'',v.contrato_cef_data||'',v.vistoria_status||'',v.vistoria_data||'',v.recebimento_status||'',v.recebimento_data||'',v.status||'',v.link_doc||'',v.observacoes||'']});exportRows([['Empreendimento','Unidade','Bloco','Andar','Status Unidade','Proprietário','CPF/CNPJ','Data da venda','Tipo de Venda','Valor de venda','Recursos Próprios','Financiamento','FGTS','Subsídio','Data SFH','Contrato Adesão','Contrato CEF','Data CEF','Vistoria','Data Vistoria','Recebimento','Data Recebimento','Status Venda','Link Doc.','Observações'],...rows],'empreendimento_'+norm(state.selected.nome).replace(/\s+/g,'_')+'_v6.csv')}
-async function navigate(view){if(view==='home'){goHome();return}if(view==='new-emp'){setActiveNav(view);state.view=view;persistWorkspace();openEmpModal();return}if(view==='report-global'){state.view=view;persistWorkspace();await renderGlobalReport();return}if(!state.selected){toast('Selecione um empreendimento para acessar esta área.','err');renderSelector();return}state.view=view;persistWorkspace(); if(view==='dashboard')renderDashboard(); if(view==='units')renderUnits(); if(view==='report-context')renderContextReport()}
+function exportPortfolio(){const rows=portfolioRows().map(({e,m})=>[e.nome,e.cidade||'',e.status||'',m.u,m.v,m.vgv,m.sfh,m.sfhPending]);exportRows([['Empreendimento','Cidade','Status','Unidades','Registros comerciais','VGV','SFH contratado','SFH por contratar'],...rows],'portfolio_empreendimentos_v8.csv')}
+function exportGlobalReport(){
+  const rows=filteredGlobal().map(v=>{const {e,u,p}=entityLookup(v);return[e?.nome||'',u?.bloco||'',u?.codigo||'',p?.nome||'',v.tipo_venda||'',v.data_venda||'',v.valor_venda??'',v.recursos_proprios??'',v.financiamento??'',v.fgts??'',v.subsidio??'',v.data_sfh||'',v.link_doc||'',v.observacoes||'']});
+  exportRows([['Empreendimento','Bloco','Unidade','Cliente','Tipo de venda','Data da venda','Valor de venda','Recursos Próprios','Financiamento','FGTS','Subsídio','Data SFH','Link Doc.','Obs'],...rows],'relatorio_executivo_v8.csv');
+}
+function exportContext(){
+  const vendaByUnit={};(state.vendas||[]).forEach(v=>{if(v?.unidade_id!=null)vendaByUnit[String(v.unidade_id)]=v});
+  const ownerById={};(state.owners||[]).forEach(p=>ownerById[String(p.id)]=p);
+  const rows=(state.unidades||[]).map(u=>{const v=vendaByUnit[String(u.id)]||{},p=ownerById[String(v.proprietario_id)]||{};return[state.selected.nome,u?.bloco||'',u?.codigo||'',p?.nome||'',v.tipo_venda||'',v.data_venda||'',v.valor_venda??'',v.recursos_proprios??'',v.financiamento??'',v.fgts??'',v.subsidio??'',v.data_sfh||'',v.link_doc||'',v.observacoes||'']});
+  exportRows([['Empreendimento','Bloco','Unidade','Cliente','Tipo de venda','Data da venda','Valor de venda','Recursos Próprios','Financiamento','FGTS','Subsídio','Data SFH','Link Doc.','Obs'],...rows],'empreendimento_'+norm(state.selected.nome).replace(/\s+/g,'_')+'_v8.csv');
+}
+function toggleSidebar(force){
+  const mobile=window.innerWidth<=820;
+  if(mobile){
+    const open=document.querySelector('.sidebar')?.classList.contains('open');
+    const next=typeof force==='boolean'?force:!open;
+    document.querySelector('.sidebar')?.classList.toggle('open',next);$('mobileBackdrop')?.classList.toggle('hidden',!next);return;
+  }
+  const collapsed=document.body.classList.contains('nav-collapsed');
+  const next=typeof force==='boolean'?force:!collapsed;document.body.classList.toggle('nav-collapsed',next);
+  try{localStorage.setItem('casaalta:sidebar:v1',next?'1':'0')}catch(e){}
+}
+function restoreSidebar(){try{if(localStorage.getItem('casaalta:sidebar:v1')==='1')document.body.classList.add('nav-collapsed')}catch(e){}}
+window.addEventListener('resize',()=>{if(window.innerWidth>820){document.querySelector('.sidebar')?.classList.remove('open');$('mobileBackdrop')?.classList.add('hidden')}});
+async function navigate(view){if(window.innerWidth<=820)toggleSidebar(false);if(view==='home'){goHome();return}if(view==='new-emp'){setActiveNav(view);state.view=view;persistWorkspace();openEmpModal();return}if(view==='report-global'){state.view=view;persistWorkspace();await renderGlobalReport();return}if(!state.selected){toast('Selecione um empreendimento para acessar esta área.','err');renderSelector();return}state.view=view;persistWorkspace(); if(view==='dashboard')renderDashboard(); if(view==='units')renderUnits(); if(view==='report-context')renderContextReport()}
 document.querySelectorAll('.nav button[data-view]').forEach(b=>b.addEventListener('click',()=>navigate(b.dataset.view)));
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')persistWorkspace()});
 window.addEventListener('beforeunload',persistWorkspace);
-document.addEventListener('DOMContentLoaded',init);
+document.addEventListener('DOMContentLoaded',()=>{restoreSidebar();init()});
 </script>
 </body></html>
